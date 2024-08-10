@@ -299,16 +299,29 @@ function Home() {
                 development.
               </p>
               <a
-                href="#"
-                className={`mt-4 inline-block font-semibold`}
-                style={
-                  centerIndex === 2
-                    ? { color: "white" }
-                    : { color: "rgba(124, 65, 163, 1)" }
-                }
-              >
-                Learn More &rarr;
-              </a>
+  href="#"
+  className={`mt-4 inline-block font-semibold flex items-center`}
+  style={
+    centerIndex === 2
+      ? { color: "white" }
+      : { color: "rgba(124, 65, 163, 1)" }
+  }
+>
+  Learn More
+  <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    fill="none" 
+    viewBox="0 0 24 24" 
+    stroke="currentColor" 
+    className="w-4 h-4 ml-3">
+    <path 
+      strokeLinecap="round" 
+      strokeLinejoin="round" 
+      strokeWidth="2" 
+      d="M9 5l7 7-7 7" />
+  </svg>
+</a>
+
             </div>
           </div>
           <div className="p-4">
@@ -349,16 +362,29 @@ function Home() {
                 Courses on design that explore the latest industry advancements.
               </p>
               <a
-                href="#"
-                className={`mt-4 inline-block font-semibold`}
-                style={
-                  centerIndex === 0
-                    ? { color: "white" }
-                    : { color: "rgba(124, 65, 163, 1)" }
-                }
-              >
-                Learn More &rarr;
-              </a>
+  href="#"
+  className={`mt-4 inline-block font-semibold flex items-center`}
+  style={
+    centerIndex === 0
+      ? { color: "white" }
+      : { color: "rgba(124, 65, 163, 1)" }
+  }
+>
+  Learn More
+  <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    fill="none" 
+    viewBox="0 0 24 24" 
+    stroke="currentColor" 
+    className="w-4 h-4 ml-3">
+    <path 
+      strokeLinecap="round" 
+      strokeLinejoin="round" 
+      strokeWidth="2" 
+      d="M9 5l7 7-7 7" />
+  </svg>
+</a>
+
             </div>
           </div>
           <div className="p-4">
@@ -400,16 +426,29 @@ function Home() {
                 innovations.
               </p>
               <a
-                href="#"
-                className={`mt-4 inline-block font-semibold`}
-                style={
-                  centerIndex === 1
-                    ? { color: "white" }
-                    : { color: "rgba(124, 65, 163, 1)" }
-                }
-              >
-                Learn More &rarr;
-              </a>
+  href="#"
+  className={`mt-4 inline-block font-semibold flex items-center`}
+  style={
+    centerIndex === 1
+      ? { color: "white" }
+      : { color: "rgba(124, 65, 163, 1)" }
+  }
+>
+  Learn More
+  <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    fill="none" 
+    viewBox="0 0 24 24" 
+    stroke="currentColor" 
+    className="w-4 h-4 ml-3">
+    <path 
+      strokeLinecap="round" 
+      strokeLinejoin="round" 
+      strokeWidth="2" 
+      d="M9 5l7 7-7 7" />
+  </svg>
+</a>
+
             </div>
           </div>
         </Slider>
