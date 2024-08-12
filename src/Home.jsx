@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import logo from "./logo.png";
 import logolight from "./logo-light.png";
-
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import Frame1 from "./images/Frame1.png";
 import Frame2 from "./images/Frame2.png";
 import Frame3 from "./images/Frame3.png";
+import Avatar from "./images/Avatar.png";
 
 function Home() {
   const [isOpen, setIsOpen] = useState(false);
@@ -35,6 +35,71 @@ function Home() {
       },
     ],
   };
+
+  const tutors = [
+    {
+      name: 'John Doe',
+      title: 'Application Support Analyst Lead',
+      description: 'Former co-founder of FlyDoor. Early staff at Pentify and CloudByte.',
+      imageUrl: 'path_to_image', 
+    },
+    {
+      name: 'John Doe',
+      title: 'Application Support Analyst Lead',
+      description: 'Former co-founder of FlyDoor. Early staff at Pentify and CloudByte.',
+      imageUrl: 'path_to_image', 
+    },
+    {
+      name: 'John Doe',
+      title: 'Application Support Analyst Lead',
+      description: 'Former co-founder of FlyDoor. Early staff at Pentify and CloudByte.',
+      imageUrl: 'path_to_image', 
+    },
+    {
+      name: 'John Doe',
+      title: 'Application Support Analyst Lead',
+      description: 'Former co-founder of FlyDoor. Early staff at Pentify and CloudByte.',
+      imageUrl: 'path_to_image', 
+    },
+    // Repeat for other tutors
+  ];
+  const TutorCard = ({ name, title, description, imageUrl }) => (
+    <div className="bg-gray-50 p-6 text-center">
+      <img
+        src={Avatar}
+        alt={name}
+        className="rounded-full mx-auto mb-3"
+        style={{width: "70px", height: "70px"}}
+      />
+      <h3 className="text-lg font-semibold text-black">{name}</h3>
+      <p className="text-purple-600" style={{ color: "rgba(124, 65, 163, 1)" }}>{title}</p>
+      <p className="text-gray-500 mt-1">{description}</p>
+      <div className="mt-3 flex justify-center space-x-4">
+      <a class="text-gray-400" href="#" title="Twitter">
+                <svg
+                  fill="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  class="w-5 h-5"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+                </svg>
+              </a>
+              <a className="ml-5 text-gray-400" href="#" title="LinkedIn">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  viewBox="0 0 32 32"
+                  className="w-5 h-5 fill-current"
+                >
+                  <path d="M29 0H3C1.343 0 0 1.343 0 3v26c0 1.657 1.343 3 3 3h26c1.657 0 3-1.343 3-3V3c0-1.657-1.343-3-3-3zM10.537 27H6.484V11.652h4.052V27zm-2.027-17.88a2.354 2.354 0 1 1 0-4.709 2.354 2.354 0 0 1 0 4.709zM27 27h-4.052V19.22c0-1.852-.036-4.229-2.575-4.229-2.577 0-2.973 2.009-2.973 4.084V27h-4.052V11.652h3.889v2.096h.055c.541-1.026 1.862-2.11 3.835-2.11 4.102 0 4.855 2.7 4.855 6.208V27z"></path>
+                </svg>
+              </a>
+      </div>
+    </div>
+  );
 
   return (
     <>
@@ -251,8 +316,8 @@ function Home() {
       {/* Start Services */}
       <div className="container mx-auto px-20 py-16 bg-white">
         <h2
-          className="text-center text-xl font-semibold"
-          style={{ color: "rgba(124, 65, 163, 1)" }}
+          className="text-center text-base font-semibold"
+          style={{ color: "rgba(136, 73, 178, 0.94)" }}
         >
           Our Services
         </h2>
@@ -454,6 +519,29 @@ function Home() {
         </Slider>
       </div>
       {/* End Services */}
+
+      {/* Start Tutors */}
+      <div className="container bg-white mx-auto py-16 px-24">
+      <h2 className="text-center text-base font-semibold" style={{ color: "rgba(136, 73, 178, 0.94)" }}>Tutors</h2>
+      <p className="text-center text-4xl font-bold text-black mt-3">
+        Meet the Heroes
+      </p>
+      <p className="text-center text-xl text-gray-500 mt-5 mb-10">
+        On Weekend UX, instructors from all over the world instruct millions of students. <br /> We offer the knowledge and abilities.
+      </p>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {tutors.map((tutor, index) => (
+          <TutorCard
+            key={index}
+            name={tutor.name}
+            title={tutor.title}
+            description={tutor.description}
+            imageUrl={tutor.imageUrl}
+          />
+        ))}
+      </div>
+    </div>
+      {/* End Tutors */}
 
       {/* Start Footer */}
       <footer
