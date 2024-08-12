@@ -8,6 +8,7 @@ import Frame1 from "./images/Frame1.png";
 import Frame2 from "./images/Frame2.png";
 import Frame3 from "./images/Frame3.png";
 import Avatar from "./images/Avatar.png";
+import Avatar2 from "./images/Avatar2.png";
 
 function Home() {
   const [isOpen, setIsOpen] = useState(false);
@@ -542,6 +543,28 @@ function Home() {
       </div>
     </div>
       {/* End Tutors */}
+
+      {/* Start */}
+      <div className="container py-16 px-8 text-center bg-purple-100">
+      <div className="inline-block text-white p-6 rounded-full mb-4">
+        <img src={logo} alt="Logo" className="w-18 h-16" /> 
+      </div>
+      <p className="font-semibold text-purple-950 mb-8" style={{fontSize: "42px"}}>
+        The courses were fantastic! It's a premier platform for <br /> anyone starting a new career or seeking a refresher.
+      </p>
+      <div className="flex justify-center items-center pb-3">
+        <img 
+          src={Avatar2} 
+          alt="John Jones" 
+          className="w-14 h-14 rounded-full mr-4" 
+        /> 
+        </div>
+        <div className="pb-4">
+          <h3 className="text-lg font-semibold text-purple-900">John Jones</h3>
+          <p className="text-gray-500">Student, National University</p>
+        </div>
+      </div>
+      {/* End */}
 
       {/* Start Footer */}
       <footer
