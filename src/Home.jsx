@@ -16,9 +16,9 @@ import Image3 from "./images/Image3.jpg";
 import Avatar3 from "./images/Avatar3.png";
 import Avatar4 from "./images/Avatar4.png";
 import Avatar5 from "./images/Avatar5.png";
-import BlogImage1 from './images/BlogImage1.png';
-import BlogImage2 from './images/BlogImage2.png';
-import BlogImage3 from './images/BlogImage3.png';
+import BlogImage1 from "./images/BlogImage1.png";
+import BlogImage2 from "./images/BlogImage2.png";
+import BlogImage3 from "./images/BlogImage3.png";
 
 function Home() {
   const [isOpen, setIsOpen] = useState(false);
@@ -251,36 +251,38 @@ function Home() {
     },
     // Repeat for other tutors
   ];
-  
+
   const blogs = [
     {
-      date: 'March 13, 2014',
-      title: 'Blog Title',
-      description: 'Agile methods seek to eliminate usability obstacles in traditional development, yet they may introduce new challenges to maintaining user experience quality.',
-      categories: ['Category 1', 'Category 2', 'Category 3'],
+      date: "March 13, 2014",
+      title: "Blog Title",
+      description:
+        "Agile methods seek to eliminate usability obstacles in traditional development, yet they may introduce new challenges to maintaining user experience quality.",
+      categories: ["Category 1", "Category 2", "Category 3"],
       image: BlogImage1,
     },
     {
-      date: 'November 16, 2014',
-      title: 'Blog Title',
-      description: 'Delight can be felt on visceral, behavioral, and reflective levels. A great design is one that...',
-      categories: ['Category 1', 'Category 2'],
+      date: "November 16, 2014",
+      title: "Blog Title",
+      description:
+        "Delight can be felt on visceral, behavioral, and reflective levels. A great design is one that...",
+      categories: ["Category 1", "Category 2"],
       image: BlogImage2,
     },
     {
-      date: 'September 24, 2017',
-      title: 'Blog Title',
-      description: 'You can apply visual design principles consistently throughout the process to craft a refined UX map.',
-      categories: ['Category 1', 'Category 2'],
+      date: "September 24, 2017",
+      title: "Blog Title",
+      description:
+        "You can apply visual design principles consistently throughout the process to craft a refined UX map.",
+      categories: ["Category 1", "Category 2"],
       image: BlogImage3,
     },
   ];
-  
 
   return (
     <>
       {/* Start Header */}
-      <header className="p-4 bg-white text-black py-9 px-12">
+      <header className="p-4 bg-white text-black py-9 px-12 fixed w-full z-50">
         <div className="container flex justify-between h-9 mx-auto px-12">
           {/* Logo */}
           <a
@@ -754,7 +756,7 @@ function Home() {
       {/* End Programs */}
 
       {/* Start Tutors */}
-      <div className="container bg-white mx-auto py-16 px-24">
+      <div className="container bg-white mx-auto pt-10 pb-16 px-24">
         <h2
           className="text-center text-base font-semibold"
           style={{ color: "rgba(136, 73, 178, 0.94)" }}
@@ -810,47 +812,83 @@ function Home() {
 
       {/* Start Blogs */}
       <div className="container mx-auto pt-10 pb-4 bg-white px-24">
-      <h2 className="text-3xl text-black font-bold mb-8">Our Recent Blogs</h2>
-      <div className="flex">
-        {/* Left Side Card */}
-        <div className="w-2/4 pr-4">
-          <div className="overflow-hidden mb-8">
-            <img src={blogs[0].image} alt={blogs[0].title} className="object-cover" style={{width: "520px", height: "220px"}} />
-            <div className="p-6">
-              <p className="text-purple-600 text-xs font-semibold mb-2" style={{ color: "rgba(136, 73, 178, 0.94)" }}>{blogs[0].date}</p>
-              <h3 className="text-xl text-black font-semibold mb-1">{blogs[0].title}</h3>
-              <p className="text-gray-600 text-base mb-4">{blogs[0].description}</p>
-              <div className="flex space-x-2">
-                {blogs[0].categories.map((category, index) => (
-                  <span key={index} className="bg-purple-100 text-purple-800 py-1 px-3 font-semibold rounded-full text-xs">{category}</span>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        {/* Right Side Cards */}
-        <div className="w-2/4 space-y-6">
-          {blogs.slice(1).map((blog, index) => (
-            <div key={index} className="flex overflow-hidden">
-              <img src={blog.image} alt={blog.title} className="w-3/4 object-cover" style={{width: "380px", height: "180px"}} />
-              <div className="pl-4 flex flex-col justify-between">
-                <div>
-                  <p className="text-purple-600 text-xs font-semibold mb-2" style={{ color: "rgba(136, 73, 178, 0.94)" }}>{blog.date}</p>
-                  <h3 className="text-black text-base font-semibold mb-1">{blog.title}</h3>
-                  <p className="text-gray-600 mb-4">{blog.description}</p>
-                </div>
-                <div className="flex space-x-2 mb-2">
-                  {blog.categories.map((category, index) => (
-                    <span key={index} className="bg-purple-100 text-purple-800 py-1 px-3 font-semibold rounded-full text-xs">{category}</span>
+        <h2 className="text-3xl text-black font-bold mb-8">Our Recent Blogs</h2>
+        <div className="flex">
+          {/* Left Side Card */}
+          <div className="w-2/4 pr-4">
+            <div className="overflow-hidden mb-8">
+              <img
+                src={blogs[0].image}
+                alt={blogs[0].title}
+                className="object-cover"
+                style={{ width: "520px", height: "220px" }}
+              />
+              <div className="p-6">
+                <p
+                  className="text-purple-600 text-xs font-semibold mb-2"
+                  style={{ color: "rgba(136, 73, 178, 0.94)" }}
+                >
+                  {blogs[0].date}
+                </p>
+                <h3 className="text-xl text-black font-semibold mb-1">
+                  {blogs[0].title}
+                </h3>
+                <p className="text-gray-600 text-base mb-4">
+                  {blogs[0].description}
+                </p>
+                <div className="flex space-x-2">
+                  {blogs[0].categories.map((category, index) => (
+                    <span
+                      key={index}
+                      className="bg-purple-100 text-purple-800 py-1 px-3 font-semibold rounded-full text-xs"
+                    >
+                      {category}
+                    </span>
                   ))}
                 </div>
               </div>
             </div>
-          ))}
+          </div>
+
+          {/* Right Side Cards */}
+          <div className="w-2/4 space-y-6">
+            {blogs.slice(1).map((blog, index) => (
+              <div key={index} className="flex overflow-hidden">
+                <img
+                  src={blog.image}
+                  alt={blog.title}
+                  className="w-3/4 object-cover"
+                  style={{ width: "380px", height: "180px" }}
+                />
+                <div className="pl-4 flex flex-col justify-between">
+                  <div>
+                    <p
+                      className="text-purple-600 text-xs font-semibold mb-2"
+                      style={{ color: "rgba(136, 73, 178, 0.94)" }}
+                    >
+                      {blog.date}
+                    </p>
+                    <h3 className="text-black text-base font-semibold mb-1">
+                      {blog.title}
+                    </h3>
+                    <p className="text-gray-600 mb-4">{blog.description}</p>
+                  </div>
+                  <div className="flex space-x-2 mb-2">
+                    {blog.categories.map((category, index) => (
+                      <span
+                        key={index}
+                        className="bg-purple-100 text-purple-800 py-1 px-3 font-semibold rounded-full text-xs"
+                      >
+                        {category}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-    </div>
       {/* End Blogs */}
 
       {/* Start Footer */}
