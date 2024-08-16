@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { FaClock } from 'react-icons/fa';
+import { FaClock } from "react-icons/fa";
 import logo from "./logo.png";
 import logolight from "./logo-light.png";
 import Slider from "react-slick";
@@ -16,6 +16,9 @@ import Image3 from "./images/Image3.jpg";
 import Avatar3 from "./images/Avatar3.png";
 import Avatar4 from "./images/Avatar4.png";
 import Avatar5 from "./images/Avatar5.png";
+import BlogImage1 from './images/BlogImage1.png';
+import BlogImage2 from './images/BlogImage2.png';
+import BlogImage3 from './images/BlogImage3.png';
 
 function Home() {
   const [isOpen, setIsOpen] = useState(false);
@@ -44,70 +47,105 @@ function Home() {
     ],
   };
 
-  const CourseCard = ({ image, duration, category, title, description, rating, reviews, instructor, price }) => {
+  const CourseCard = ({
+    image,
+    duration,
+    category,
+    title,
+    description,
+    rating,
+    reviews,
+    instructor,
+    price,
+  }) => {
     return (
       <div className="bg-white rounded-lg drop-shadow-lg p-4 m-3">
-      <div className="relative">
-        <img src={image} alt={title} className="rounded-lg w-full px-1" style={{ width: "300px", height: "210px" }} />
-        <div className="absolute top-2 right-3 bg-white rounded py-1 px-2 flex items-center shadow-lg">
-          <FaClock className="text-purple-800 mr-1" />
-          <span className="text-gray-800 text-sm font-semibold">{duration}</span>
-        </div>
-      </div>
-      <div className="mt-6 px-2">
-        <p className="text-sm font-semibold" style={{ color: "rgba(136, 73, 178, 0.94)" }}>{category}</p>
-        <h3 className="text-2xl font-semibold text-gray-900 mt-2">{title}</h3>
-        <p className="text-gray-600 mt-2">{description}</p>
-        <div className="flex items-center mt-2">
-          <span className="text-yellow-400 text-sm">{rating}</span>
-          <span className="text-gray-600 ml-2 text-sm">({reviews})</span>
-        </div>
-        <div className="flex items-center mt-6 pb-3">
-          <img src={instructor.image} alt={instructor.name} className="w-9 h-9 rounded-full" />
-          <div className="ml-2">
-            <p className="text-gray-900 text-sm font-semibold">{instructor.name}</p>
-            <p className="text-gray-500 text-sm">{instructor.enrolled} Enrolled</p>
+        <div className="relative">
+          <img
+            src={image}
+            alt={title}
+            className="rounded-lg w-full px-1"
+            style={{ width: "300px", height: "210px" }}
+          />
+          <div className="absolute top-2 right-3 bg-white rounded py-1 px-2 flex items-center shadow-lg">
+            <FaClock className="text-purple-800 mr-1" />
+            <span className="text-gray-800 text-sm font-semibold">
+              {duration}
+            </span>
           </div>
-          <div className="ml-auto text-2xl font-bold" style={{ color: "rgba(124, 65, 163, 1)" }}>${price}</div>
+        </div>
+        <div className="mt-6 px-2">
+          <p
+            className="text-sm font-semibold"
+            style={{ color: "rgba(136, 73, 178, 0.94)" }}
+          >
+            {category}
+          </p>
+          <h3 className="text-2xl font-semibold text-gray-900 mt-2">{title}</h3>
+          <p className="text-gray-600 mt-2">{description}</p>
+          <div className="flex items-center mt-2">
+            <span className="text-yellow-400 text-sm">{rating}</span>
+            <span className="text-gray-600 ml-2 text-sm">({reviews})</span>
+          </div>
+          <div className="flex items-center mt-6 pb-3">
+            <img
+              src={instructor.image}
+              alt={instructor.name}
+              className="w-9 h-9 rounded-full"
+            />
+            <div className="ml-4">
+              <p className="text-gray-900 text-sm font-semibold">
+                {instructor.name}
+              </p>
+              <p className="text-gray-500 text-sm">
+                {instructor.enrolled} Enrolled
+              </p>
+            </div>
+            <div
+              className="ml-auto text-2xl font-bold"
+              style={{ color: "rgba(124, 65, 163, 1)" }}
+            >
+              ${price}
+            </div>
+          </div>
         </div>
       </div>
-    </div>
     );
   };
 
   const courses = [
     {
       image: Image1,
-      duration: '08 hr 12 mins',
-      category: 'Category',
-      title: 'Course Title 1',
-      description: 'Course description here Lorem Ipsum dolor is dummy text.',
-      rating: '4.3 ★★★★★',
-      reviews: '16,000',
-      instructor: { name: 'John Doe', enrolled: '20,000', image: Avatar3 },
-      price: '20',
+      duration: "08 hr 12 mins",
+      category: "Category",
+      title: "Course Title 1",
+      description: "Course description here Lorem Ipsum dolor is dummy text.",
+      rating: "4.3 ★★★★★",
+      reviews: "16,000",
+      instructor: { name: "John Doe", enrolled: "20,000", image: Avatar3 },
+      price: "20",
     },
     {
       image: Image2,
-      duration: '06 hr 3 mins',
-      category: 'Category',
-      title: 'Course Title 2',
-      description: 'Course description here Lorem Ipsum dolor is dummy text.',
-      rating: '3.9 ★★★★★',
-      reviews: '500',
-      instructor: { name: 'John Doe', enrolled: '1000', image: Avatar4 },
-      price: '10',
+      duration: "06 hr 3 mins",
+      category: "Category",
+      title: "Course Title 2",
+      description: "Course description here Lorem Ipsum dolor is dummy text.",
+      rating: "3.9 ★★★★★",
+      reviews: "500",
+      instructor: { name: "John Doe", enrolled: "1000", image: Avatar4 },
+      price: "10",
     },
     {
       image: Image3,
-      duration: '01 hr 2 mins',
-      category: 'Category',
-      title: 'Course Title 3',
-      description: 'Course description here Lorem Ipsum dolor is dummy text.',
-      rating: '4.2 ★★★★★',
-      reviews: '125',
-      instructor: { name: 'John Doe', enrolled: '2000', image: Avatar5 },
-      price: '11.50',
+      duration: "01 hr 2 mins",
+      category: "Category",
+      title: "Course Title 3",
+      description: "Course description here Lorem Ipsum dolor is dummy text.",
+      rating: "4.2 ★★★★★",
+      reviews: "125",
+      instructor: { name: "John Doe", enrolled: "2000", image: Avatar5 },
+      price: "11.50",
     },
   ];
 
@@ -213,6 +251,31 @@ function Home() {
     },
     // Repeat for other tutors
   ];
+  
+  const blogs = [
+    {
+      date: 'March 13, 2014',
+      title: 'Blog Title',
+      description: 'Agile methods seek to eliminate usability obstacles in traditional development, yet they may introduce new challenges to maintaining user experience quality.',
+      categories: ['Category 1', 'Category 2', 'Category 3'],
+      image: BlogImage1,
+    },
+    {
+      date: 'November 16, 2014',
+      title: 'Blog Title',
+      description: 'Delight can be felt on visceral, behavioral, and reflective levels. A great design is one that...',
+      categories: ['Category 1', 'Category 2'],
+      image: BlogImage2,
+    },
+    {
+      date: 'September 24, 2017',
+      title: 'Blog Title',
+      description: 'You can apply visual design principles consistently throughout the process to craft a refined UX map.',
+      categories: ['Category 1', 'Category 2'],
+      image: BlogImage3,
+    },
+  ];
+  
 
   return (
     <>
@@ -554,7 +617,8 @@ function Home() {
                   centerIndex === 0 ? { color: "white" } : { color: "gray" }
                 }
               >
-                Courses on design that explore <br /> the latest industry advancements.
+                Courses on design that explore <br /> the latest industry
+                advancements.
               </p>
               <a
                 href="#"
@@ -658,25 +722,35 @@ function Home() {
 
       {/* Start Programs */}
       <div className="container mx-auto px-24 py-8 bg-white">
-      <h2 className="text-base font-semibold mb-2" style={{ color: "rgba(136, 73, 178, 0.94)" }}>Explore Programs</h2>
-      <h1 className="text-4xl font-bold text-gray-900 mb-4">Our Most Popular Class</h1>
-      <p className="text-gray-500 text-xl mb-8">Step into our acclaimed class, where cutting-edge insights and expertise await to enhance your skills.</p>
-      <Slider {...settings1}>
-        {courses.map((course, index) => (
-          <div key={index}>
-            <CourseCard {...course} />
-          </div>
-        ))}
-      </Slider>
-      <div className="text-center mt-14">
-  <button href="#"
-    className="bg-gray-100 text-black text-sm py-2 px-4 border-2 rounded-lg font-bold transition hover:bg-[rgba(124,65,163,1)] hover:text-white"
-  >
-    Explore All Programs
-  </button>
-</div>
-
-    </div>
+        <h2
+          className="text-base font-semibold mb-2"
+          style={{ color: "rgba(136, 73, 178, 0.94)" }}
+        >
+          Explore Programs
+        </h2>
+        <h1 className="text-4xl font-bold text-gray-900 mb-4">
+          Our Most Popular Class
+        </h1>
+        <p className="text-gray-500 text-xl mb-8">
+          Step into our acclaimed class, where cutting-edge insights and
+          expertise await to enhance your skills.
+        </p>
+        <Slider {...settings1}>
+          {courses.map((course, index) => (
+            <div key={index}>
+              <CourseCard {...course} />
+            </div>
+          ))}
+        </Slider>
+        <div className="text-center mt-14">
+          <button
+            href="#"
+            className="bg-gray-100 text-black text-sm py-2 px-4 border-2 rounded-lg font-bold transition hover:bg-[rgba(124,65,163,1)] hover:text-white"
+          >
+            Explore All Programs
+          </button>
+        </div>
+      </div>
       {/* End Programs */}
 
       {/* Start Tutors */}
@@ -724,7 +798,7 @@ function Home() {
           <img
             src={Avatar2}
             alt="John Jones"
-            className="w-14 h-14 rounded-full mr-4"
+            className="w-14 h-14 rounded-full"
           />
         </div>
         <div className="pb-4">
@@ -733,6 +807,51 @@ function Home() {
         </div>
       </div>
       {/* End info*/}
+
+      {/* Start Blogs */}
+      <div className="container mx-auto pt-10 pb-4 bg-white px-24">
+      <h2 className="text-3xl text-black font-bold mb-8">Our Recent Blogs</h2>
+      <div className="flex">
+        {/* Left Side Card */}
+        <div className="w-2/4 pr-4">
+          <div className="overflow-hidden mb-8">
+            <img src={blogs[0].image} alt={blogs[0].title} className="object-cover" style={{width: "520px", height: "220px"}} />
+            <div className="p-6">
+              <p className="text-purple-600 text-xs font-semibold mb-2" style={{ color: "rgba(136, 73, 178, 0.94)" }}>{blogs[0].date}</p>
+              <h3 className="text-xl text-black font-semibold mb-1">{blogs[0].title}</h3>
+              <p className="text-gray-600 text-base mb-4">{blogs[0].description}</p>
+              <div className="flex space-x-2">
+                {blogs[0].categories.map((category, index) => (
+                  <span key={index} className="bg-purple-100 text-purple-800 py-1 px-3 font-semibold rounded-full text-xs">{category}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        {/* Right Side Cards */}
+        <div className="w-2/4 space-y-6">
+          {blogs.slice(1).map((blog, index) => (
+            <div key={index} className="flex overflow-hidden">
+              <img src={blog.image} alt={blog.title} className="w-3/4 object-cover" style={{width: "380px", height: "180px"}} />
+              <div className="pl-4 flex flex-col justify-between">
+                <div>
+                  <p className="text-purple-600 text-xs font-semibold mb-2" style={{ color: "rgba(136, 73, 178, 0.94)" }}>{blog.date}</p>
+                  <h3 className="text-black text-base font-semibold mb-1">{blog.title}</h3>
+                  <p className="text-gray-600 mb-4">{blog.description}</p>
+                </div>
+                <div className="flex space-x-2 mb-2">
+                  {blog.categories.map((category, index) => (
+                    <span key={index} className="bg-purple-100 text-purple-800 py-1 px-3 font-semibold rounded-full text-xs">{category}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+      {/* End Blogs */}
 
       {/* Start Footer */}
       <footer
