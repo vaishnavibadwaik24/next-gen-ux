@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { FaClock } from "react-icons/fa";
@@ -412,19 +413,20 @@ function Home() {
 
           {/* Authentication Buttons */}
           <div className="items-center flex-shrink-0 hidden lg:flex">
-            <button className="self-center px-4 py-3 font-semibold rounded">
-              Sign in
-            </button>
-            <button
-              className="self-center px-5 py-2 font-semibold rounded-lg border-4 text-gray-50"
-              style={{
-                backgroundColor: "rgba(124, 65, 163, 1)",
-                borderColor: "rgba(244, 235, 255, 1)",
-              }}
-            >
-              Create free account
-            </button>
-          </div>
+          <Link to="/SignIn" className="self-center px-4 py-3 font-semibold rounded">
+            Sign in
+          </Link>
+          <Link
+            to="/CreateAccount"
+            className="self-center px-5 py-2 font-semibold rounded-lg border-4 text-gray-50"
+            style={{
+              backgroundColor: "rgba(124, 65, 163, 1)",
+              borderColor: "rgba(244, 235, 255, 1)",
+            }}
+          >
+            Create free account
+          </Link>
+        </div>
 
           {/* Mobile Menu Button */}
           <button
