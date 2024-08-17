@@ -286,9 +286,9 @@ function Home() {
       <header className="p-4 bg-white text-black py-9 px-12 fixed w-full z-50">
         <div className="container flex justify-between h-9 mx-auto px-12">
           {/* Logo */}
-          <a
+          <Link
+            to="/"
             rel="noopener noreferrer"
-            href="#"
             aria-label="Back to homepage"
             className="flex items-center p-2"
           >
@@ -297,117 +297,112 @@ function Home() {
               alt="logo"
               style={{ width: "70px", height: "60px" }}
             />
-          </a>
+          </Link>
 
           {/* Search and Explore Section */}
           <div className="flex items-center border border-gray-300 rounded-lg overflow-hidden">
-            <div className="flex items-center px-3">
-              <svg
-                className="w-5 h-5 text-gray-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                ></path>
-              </svg>
-              <input
-                type="text"
-                placeholder="Want to learn?"
-                className="outline-none border-none focus:ring-0 focus:outline-none ml-2 bg-white text-gray-500"
-              />
-            </div>
+      <div className="flex items-center px-3">
+        <svg
+          className="w-5 h-5 text-gray-400"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+          ></path>
+        </svg>
+        <input
+          type="text"
+          placeholder="Want to learn?"
+          className="outline-none border-none focus:ring-0 focus:outline-none ml-2 bg-white text-gray-500"
+        />
+      </div>
 
-            {/* Dropdown Menu Button */}
-            <div className="relative inline-block text-left">
-              <button
-                className="bg-purple-100 text-purple-900 text-sm font-semibold px-4 py-1.5 mr-1 rounded-lg flex items-center"
-                onClick={() => setIsOpen(!isOpen)}
-              >
-                Explore
-                <svg
-                  className={`ml-1 w-4 h-4 transition-transform duration-200 ${
-                    isOpen ? "rotate-180" : ""
-                  }`}
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="3"
-                    d="M19 9l-7 7-7-7"
-                  ></path>
-                </svg>
-              </button>
+      {/* Dropdown Menu Button */}
+      <div className="relative inline-block text-left">
+        <button
+          className="bg-purple-100 text-purple-900 text-sm font-semibold px-4 py-1.5 mr-1 rounded-lg flex items-center"
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          Explore
+          <svg
+            className={`ml-1 w-4 h-4 transition-transform duration-200 ${
+              isOpen ? "rotate-180" : ""
+            }`}
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="3"
+              d="M19 9l-7 7-7-7"
+            ></path>
+          </svg>
+        </button>
 
-              {/* Dropdown Menu */}
-              {isOpen && (
-                <ul className="absolute right-0 mt-2 bg-white border border-gray-200 rounded-md shadow-lg w-35">
-                  <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                    <a href="#">Course 1</a>
-                  </li>
-                  <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                    <a href="#">Course 2</a>
-                  </li>
-                </ul>
-              )}
-            </div>
-          </div>
+        {/* Dropdown Menu */}
+        {isOpen && (
+          <ul className="absolute right-0 mt-2 bg-white border border-gray-200 rounded-md shadow-lg w-40">
+            <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+              <a href="#">Course 1</a>
+            </li>
+            <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+              <a href="#">Course 2</a>
+            </li>
+          </ul>
+        )}
+      </div>
+    </div>
 
           {/* Navigation Links */}
           <ul className="items-stretch hidden space-x-3 lg:flex">
             <li className="flex">
-              <a
-                rel="noopener noreferrer"
-                href="#"
+              <Link
+                to="/"
                 className="flex items-center ml-2 font-semibold -mb-1 border-b-2 border-transparent border-red-600"
               >
                 Home
-              </a>
+              </Link>
             </li>
             <li className="flex">
-              <a
-                rel="noopener noreferrer"
-                href="#"
+              <Link
+                to="/About"
                 className="flex items-center px-1 font-semibold -mb-1 border-b-2 border-transparent"
               >
                 About us
-              </a>
+              </Link>
             </li>
             <li className="flex">
-              <a
-                rel="noopener noreferrer"
-                href="#"
+              <Link
+                to="/Courses"
                 className="flex items-center px-1 font-semibold -mb-1 border-b-2 border-transparent"
               >
                 Courses
-              </a>
+              </Link>
             </li>
             <li className="flex">
-              <a
-                rel="noopener noreferrer"
-                href="#"
+              <Link
+                to="/Contact"
                 className="flex items-center px-1 font-semibold -mb-1 border-b-2 border-transparent"
               >
                 Contact us
-              </a>
+              </Link>
             </li>
             <li className="flex">
-              <a
-                rel="noopener noreferrer"
-                href="#"
+              <Link
+                to="/FAQ"
                 className="flex items-center font-semibold -mb-1 border-b-2 border-transparent"
               >
                 FAQ's
-              </a>
+              </Link>
             </li>
           </ul>
 
@@ -457,36 +452,37 @@ function Home() {
           }`}
         >
           <ul className="flex flex-col space-y-2 mt-4 p-4">
-            <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+            <li className="px-4 py-2 font-semibold hover:bg-gray-100 cursor-pointer">
               <a href="#">Home</a>
             </li>
-            <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+            <li className="px-4 py-2 font-semibold hover:bg-gray-100 cursor-pointer">
               <a href="#">About us</a>
             </li>
-            <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+            <li className="px-4 py-2 font-semibold hover:bg-gray-100 cursor-pointer">
               <a href="#">Courses</a>
             </li>
-            <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+            <li className="px-4 py-2 font-semibold hover:bg-gray-100 cursor-pointer">
               <a href="#">Contact us</a>
             </li>
-            <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+            <li className="px-4 py-2 font-semibold hover:bg-gray-100 cursor-pointer">
               <a href="#">FAQ's</a>
             </li>
             <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-              <button className="w-full font-semibold text-black">
+              <Link to="/SignIn" className="w-full font-semibold text-black">
                 Sign in
-              </button>
+              </Link>
             </li>
             <li className="px-4 py-2 cursor-pointer">
-              <button
-                className="w-full py-2 font-semibold rounded-lg border-4 text-gray-50"
+              <Link
+                to="/CreateAccount"
+                className="w-full px-4 py-2 font-semibold rounded-lg border-4 text-gray-50"
                 style={{
                   backgroundColor: "rgba(124, 65, 163, 1)",
                   borderColor: "rgba(244, 235, 255, 1)",
                 }}
               >
                 Create free account
-              </button>
+              </Link>
             </li>
           </ul>
         </div>
