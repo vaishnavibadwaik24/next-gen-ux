@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Contact() {
   return (
-    <div className="flex justify-center items-center min-h-screen bg-white py-16">
+    <div className="flex justify-center items-center min-h-screen bg-white pt-36 pb-16">
       <div className="bg-white p-8 pb-16 rounded-lg drop-shadow-lg max-w-4xl w-full">
         <h2
           className="text-center text-purple-700 font-semibold text-2xl mb-6 pb-2 underline underline-offset-8"
@@ -11,7 +11,7 @@ export default function Contact() {
           CONTACT US
         </h2>
         <div className="flex flex-col lg:flex-row gap-8">
-          {/* Left Side: Contact Form */}
+          {/* Left Side */}
           <div className="w-full lg:w-1/2">
             <h3 className="text-lg text-black font-semibold mb-4">
               Leave us a message
@@ -48,7 +48,7 @@ export default function Contact() {
               </button>
             </form>
           </div>
-          {/* Right Side: Contact Info */}
+          {/* Right Side */}
           <div className="w-full lg:w-1/2">
             <div className="text-black mb-7 mt-16">
               <p className="pl-14 text-base">NextGen UX</p>

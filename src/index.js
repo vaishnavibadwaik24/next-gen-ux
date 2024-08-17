@@ -13,14 +13,14 @@ import reportWebVitals from "./reportWebVitals";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
-  <Header />
+    <Header />
     <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/contact" element={<Contact />} />
       <Route path="/signin" element={<SignIn />} />
       <Route path="/createaccount" element={<CreateAccount />} />
+      <Route path="/" element={<Home />} />
+      <Route path="/contact" element={<Contact />} />
     </Routes>
-  <Footer />  
+    <Footer />
   </BrowserRouter>
 );
 
