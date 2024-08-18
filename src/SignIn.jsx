@@ -37,7 +37,7 @@ export default function SignIn() {
           </div>
           <div className="text-right mt-4">
             <p className="text-sm text-gray-500">Don’t Have Account ? </p>
-            <Link to="/createaccount" className="text-sm text-purple-500 hover:underline">
+            <Link to="/CreateAccount" className="text-sm text-purple-500 hover:underline">
               Create Here
             </Link>
           </div>
