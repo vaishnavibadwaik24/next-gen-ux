@@ -178,16 +178,16 @@ export default function Header() {
       >
         <ul className="flex flex-col space-y-2 mt-4 p-4">
           <li className="px-4 py-2 font-semibold hover:bg-gray-100 cursor-pointer">
-            <a href="#">Home</a>
+            <Link to="/">Home</Link>
           </li>
           <li className="px-4 py-2 font-semibold hover:bg-gray-100 cursor-pointer">
-            <a href="#">About us</a>
+            <Link to="/About">About us</Link>
           </li>
           <li className="px-4 py-2 font-semibold hover:bg-gray-100 cursor-pointer">
             <a href="#">Courses</a>
           </li>
           <li className="px-4 py-2 font-semibold hover:bg-gray-100 cursor-pointer">
-            <a href="#">Contact us</a>
+            <Link to="/Contact">Contact us</Link>
           </li>
           <li className="px-4 py-2 font-semibold hover:bg-gray-100 cursor-pointer">
             <a href="#">FAQ's</a>
