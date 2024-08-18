@@ -106,7 +106,6 @@ export default function Header() {
           </li>
           <li className="flex">
             <Link
-              to="/Courses"
               className="flex items-center px-1 font-semibold -mb-1 border-b-2 border-transparent"
             >
               Courses
@@ -122,7 +121,6 @@ export default function Header() {
           </li>
           <li className="flex">
             <Link
-              to="/FAQ"
               className="flex items-center font-semibold -mb-1 border-b-2 border-transparent"
             >
               FAQ's

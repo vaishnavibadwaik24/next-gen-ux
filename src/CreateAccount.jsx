@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function CreateAccount() {
   return (
@@ -33,17 +34,17 @@ export default function CreateAccount() {
               className="w-full text-white font-semibold p-2 rounded focus:outline-none"
               style={{ backgroundColor: "rgba(136, 73, 178, 0.94)" }}
             >
-              Login
+              Create Account
             </button>
           </div>
           <div className="text-right mt-4">
             <p className="text-sm text-gray-500">Already Having Account ? </p>
-            <a href="#" className="text-sm text-purple-500 hover:underline">
+            <Link to="/signin" className="text-sm text-purple-500 hover:underline">
               Login Here
-            </a>
+            </Link>
           </div>
         </form>
       </div>
     </div>
-  )
+  );
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 
 export default function SignIn() {
   return (
@@ -21,9 +22,9 @@ export default function SignIn() {
             />
           </div>
           <div className="text-right mb-4">
-            <a href="#" className="text-sm text-gray-500 hover:underline">
+            <Link to="#" className="text-sm text-gray-500 hover:underline">
               Forgot Password ?
-            </a>
+            </Link>
           </div>
           <div>
             <button
@@ -36,9 +37,9 @@ export default function SignIn() {
           </div>
           <div className="text-right mt-4">
             <p className="text-sm text-gray-500">Don’t Have Account ? </p>
-            <a href="#" className="text-sm text-purple-500 hover:underline">
+            <Link to="/createaccount" className="text-sm text-purple-500 hover:underline">
               Create Here
-            </a>
+            </Link>
           </div>
         </form>
       </div>

@@ -1,104 +1,105 @@
 import React from "react";
 import logolight from "./logo-light.png";
 
+
 export default function Footer() {
   return (
     <footer
-    class="text-gray-600 body-font"
+    className="text-gray-600 body-font"
     style={{ backgroundColor: "rgba(46, 0, 64, 1)" }}
   >
-    <div class="container px-24 py-16 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
-      <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
+    <div className="container px-24 py-16 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
+      <div className="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
         <img
           src={logolight}
           alt="logo-light"
           style={{ width: "70px", height: "60px" }}
         />
         <br />
-        <p class="mt-2 text-base text-slate-200">
+        <p className="mt-2 text-base text-slate-200">
           Top learning experiences that create more talent in the world.
         </p>
       </div>
-      <div class="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center">
-        <div class="lg:w-1/4 md:w-1/2 w-full px-4">
-          <h2 class="title-font font-medium text-gray-400 text-sm text-sm mb-3">
+      <div className="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center">
+        <div className="lg:w-1/4 md:w-1/2 w-full px-4">
+          <h2 className="title-font font-medium text-gray-400 text-sm text-sm mb-3">
             Product
           </h2>
-          <nav class="list-none mb-10">
+          <nav className="list-none mb-10">
             <li>
-              <a class="text-slate-200">Overview</a>
+              <a className="text-slate-200">Overview</a>
             </li>
             <li>
-              <a class="text-slate-200">Features</a>
+              <a className="text-slate-200">Features</a>
             </li>
             <li>
-              <a class="text-slate-200">Tutorials</a>
+              <a className="text-slate-200">Tutorials</a>
             </li>
             <li>
-              <a class="text-slate-200">Pricing</a>
+              <a className="text-slate-200">Pricing</a>
             </li>
           </nav>
         </div>
-        <div class="lg:w-1/4 md:w-1/2 w-full px-4">
-          <h2 class="title-font font-medium text-gray-400 text-sm text-sm mb-3">
+        <div className="lg:w-1/4 md:w-1/2 w-full px-4">
+          <h2 className="title-font font-medium text-gray-400 text-sm text-sm mb-3">
             Company
           </h2>
-          <nav class="list-none mb-10">
+          <nav className="list-none mb-10">
             <li>
-              <a class="text-slate-200">About us</a>
+              <a className="text-slate-200">About us</a>
             </li>
             <li>
-              <a class="text-slate-200">Careers</a>
+              <a className="text-slate-200">Careers</a>
             </li>
           </nav>
         </div>
-        <div class="lg:w-1/4 md:w-1/2 w-full px-4">
-          <h2 class="title-font font-medium text-gray-400 text-sm mb-3">
+        <div className="lg:w-1/4 md:w-1/2 w-full px-4">
+          <h2 className="title-font font-medium text-gray-400 text-sm mb-3">
             Social
           </h2>
-          <nav class="list-none mb-10">
+          <nav className="list-none mb-10">
             <li>
-              <a class="text-slate-200">Twitter</a>
+              <a className="text-slate-200">Twitter</a>
             </li>
             <li>
-              <a class="text-slate-200">LinkedIn</a>
+              <a className="text-slate-200">LinkedIn</a>
             </li>
             <li>
-              <a class="text-slate-200">GitHub</a>
+              <a className="text-slate-200">GitHub</a>
             </li>
           </nav>
         </div>
-        <div class="lg:w-1/4 md:w-1/2 w-full px-4">
-          <h2 class="title-font font-medium text-gray-400 text-sm text-sm mb-3">
+        <div className="lg:w-1/4 md:w-1/2 w-full px-4">
+          <h2 className="title-font font-medium text-gray-400 text-sm text-sm mb-3">
             Legal
           </h2>
-          <nav class="list-none mb-10">
+          <nav className="list-none mb-10">
             <li>
-              <a class="text-slate-200">Terms</a>
+              <a className="text-slate-200">Terms</a>
             </li>
             <li>
-              <a class="text-slate-200">Privacy</a>
+              <a className="text-slate-200">Privacy</a>
             </li>
             <li>
-              <a class="text-slate-200">Contact</a>
+              <a className="text-slate-200">Contact</a>
             </li>
           </nav>
         </div>
       </div>
     </div>
-    <div class="pb-11">
-      <div class="container mx-auto px-24 flex flex-wrap flex-col sm:flex-row">
-        <p class="text-gray-400 text-base text-center sm:text-left">
+    <div className="pb-11">
+      <div className="container mx-auto px-24 flex flex-wrap flex-col sm:flex-row">
+        <p className="text-gray-400 text-base text-center sm:text-left">
           © 2024 NextGen UX. All rights reserved.
         </p>
-        <span class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
-          <a class="text-gray-400" href="#" title="Twitter">
+        <span className="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
+          <a className="text-gray-400" href="#" title="Twitter">
             <svg
               fill="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              class="w-5 h-5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              className="w-5 h-5"   
               viewBox="0 0 24 24"
             >
               <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
