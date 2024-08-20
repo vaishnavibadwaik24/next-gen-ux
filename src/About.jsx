@@ -46,7 +46,7 @@ export default function About() {
           </a>
         </div>
         <div className="flex-1 flex flex-col gap-5 relative">
-          
+          <div className="bg-neutral-100 flex flex-col gap-5">
             <div className="w-full h-52 rounded-lg overflow-hidden bg-neutral-100 relative">
               <img
                 src={AUimage1}
@@ -61,7 +61,7 @@ export default function About() {
                 className="absolute left-0 bottom-0 w-3/4 h-full object-cover rounded-lg"
               />
             </div>
-          
+          </div>
         </div>
       </div>
       {/* End About */}
