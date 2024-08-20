@@ -2,8 +2,54 @@ import React from "react";
 import AUimage1 from "./images/AUimage1.png";
 import AUimage2 from "./images/AUimage2.png";
 import FeatureImg from "./images/FeatureImg.png";
+import Ellipse1 from "./images/Ellipse1.png";
+import Ellipse2 from "./images/Ellipse2.png";
 
 export default function About() {
+  const benefits = [
+    {
+      id: 1,
+      title: "Standardization",
+      description:
+        "When working in a global workplace, it’s often difficult to gauge learners’ training experiences, which are...",
+      link: "#",
+    },
+    {
+      id: 2,
+      title: "Reduced Costs",
+      description:
+        "With NextGen UX, there’s no cost to reproduce materials and, thanks to mobile learning and microlearning...",
+      link: "#",
+    },
+    {
+      id: 3,
+      title: "More Customization",
+      description:
+        "Just like learners aren’t one-size-fits-all, learning is not a one-size-fits-all experience. By using different...",
+      link: "#",
+    },
+    {
+      id: 4,
+      title: "Affordable Pricing",
+      description:
+        "With NextGen UX, there’s no cost to reproduce materials and, thanks to mobile learning and microlearning...",
+      link: "#",
+    },
+    {
+      id: 5,
+      title: "Learner Satisfaction",
+      description:
+        "If you really want students to retain what they learn, you'll need to aim for high satisfaction rates. Bad...",
+      link: "#",
+    },
+    {
+      id: 6,
+      title: "Multimedia Materials",
+      description:
+        "One of the main reasons why custom eLearning is effective is that it’s the perfect delivery method for...",
+      link: "#",
+    },
+  ];
   return (
     <>
       {/*  Start About */}
@@ -91,7 +137,7 @@ export default function About() {
             >
               Features
             </h1>
-            <h1 className="text-5xl font-semibold">
+            <h1 className="text-5xl mt-2 font-semibold">
               We are constantly striving to deliver the best features in every
               aspect.
             </h1>
@@ -125,6 +171,62 @@ export default function About() {
         </div>
       </section>
       {/* End Features */}
+
+      {/* Start Benefits */}
+      <div className="bg-white px-28 pb-20">
+        <div className="max-w-7xl mx-auto text-center">
+          <h2
+            className="text-purple-600 text-2xl font-bold"
+            style={{ color: "rgba(124, 65, 163, 1)" }}
+          >
+            Our Benefits
+          </h2>
+          <p className="mt-6 text-5xl font-semibold text-gray-900">
+            By joining the NextGen UX platform, you <br /> can unlock a wide
+            range of benefits.
+          </p>
+          <p className="mt-6 text-base text-black">
+            Install our top-rated dropshipping app to your e-commerce site and
+            get <br /> access to US Suppliers, AliExpress vendors, and the best.
+          </p>
+        </div>
+
+        <div className="mt-12 grid gap-4 lg:grid-cols-3 max-w-7xl mx-auto">
+          {benefits.map((benefit, index) => (
+            <div
+              key={benefit.id}
+              className={`p-6 rounded-lg border text-left relative ${
+                index % 2 === 0 ? "bg-purple-50" : "bg-white"
+              }`}
+            >
+              <div className="relative flex items-left justify-left">
+                <img
+                  src={ index % 2 === 0 ? Ellipse1 : Ellipse2}
+                  alt="Ellipse"
+                  className="absolute inset-0 w-10 h-10"
+                />
+                <div className="relative text-3xl font-semibold z-10" style={{ color: "rgba(124, 65, 163, 1)" }}>
+                  {String(benefit.id).padStart(2, "0")}
+                </div>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mt-5">
+                {benefit.title}
+              </h3>
+              <p className="mt-3 text-sm text-black">
+                {benefit.description}
+                <span><a
+                href={benefit.link}
+                className="mt-4 font-small font-semibold hover:underline"
+                style={{ color: "rgba(124, 65, 163, 1)" }}
+              >
+                Read More
+              </a></span>
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+      {/* End Benefits */}
     </>
   );
 }
