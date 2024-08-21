@@ -1,6 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
+import emailjs from "@emailjs/browser";
 
 export default function Contact() {
+  const[name, setName] = useState('');
+  const[email, setEmail] = useState('');
+  const[message, setMessage] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const contactData = {
+      from_name : name,
+      from_email : email,
+      message : message,
+      to_name : 'NextGen UX'
+    }
+
+    emailjs
+      .send(
+        "Add your Service ID",   // EmailJS service ID
+        "Add your Template ID",  // EmailJS template ID
+        "Add your User ID",      // EmailJS user ID
+        contactData
+      )
+      .then(
+        (response) => {
+          console.log("SUCCESS!", response.status, response.text);
+          alert("Message Sent");
+          setName(''); // Reset form fields
+          setEmail('');
+          setMessage('');
+        },
+        (error) => {
+          console.error("FAILED...", error);
+          alert("Error sending message");
+        }
+      );
+  }
+
   return (
     <div className="flex justify-center items-center min-h-screen bg-white pt-36 pb-16">
       <div className="bg-white p-8 pb-16 rounded-lg drop-shadow-lg max-w-4xl w-full">
@@ -16,26 +53,38 @@ export default function Contact() {
             <h3 className="text-lg text-black font-semibold mb-4">
               Leave us a message
             </h3>
-            <form>
+            <form onSubmit={handleSubmit}>
               <div className="mb-5">
                 <label className="block text-black">Name</label>
                 <input
                   type="text"
+                  id="name"
+                  name="name"
                   placeholder="Full Name"
-                  className="w-full p-3 rounded bg-white border border-gray-300 text-gray-300 focus:outline-none focus:border-purple-700"
+                  className="w-full p-3 rounded bg-white border border-gray-300 text-black focus:outline-none focus:border-purple-700"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
                 />
               </div>
               <div className="mb-5">
                 <input
                   type="email"
+                  id="email"
+                  name="email"
                   placeholder="Email Address"
-                  className="w-full p-3 rounded bg-white border border-gray-300 text-gray-300 focus:outline-none focus:border-purple-700"
+                  className="w-full p-3 rounded bg-white border border-gray-300 text-black focus:outline-none focus:border-purple-700"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
               <div className="mb-8">
                 <textarea
+                  id="message"
+                  name="message"
                   placeholder="Your Message"
-                  className="w-full p-3 rounded bg-white border border-gray-300 text-gray-300 focus:outline-none focus:border-purple-700"
+                  className="w-full p-3 rounded bg-white border border-gray-300 text-black focus:outline-none focus:border-purple-700"
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
                   rows="4"
                 ></textarea>
               </div>

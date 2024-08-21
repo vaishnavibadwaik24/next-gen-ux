@@ -1,7 +1,12 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import logo from "./logo.png";
+import Hero from "./images/Hero.png";
+import Speak from "./images/Speak.png";
+import Vector from "./images/Vector.png";
+import idea from "./images/idea.svg";
 import { FaClock } from "react-icons/fa";
 import Slider from "react-slick";
 import Frame1 from "./images/Frame1.png";
@@ -279,8 +284,86 @@ function Home() {
 
   return (
     <>
+      {/* Start Hero */}
+      <div className="relative container">
+        <img src={Hero} alt="Hero Image" className="w-full h-auto" />
+        <div className="absolute inset-0 flex items-center justify-start text-white">
+          <h1 className="text-6xl text-black font-bold pl-24 pb-52 leading-tight">
+            Upgrade Your{" "}
+            <span style={{ color: "rgba(124, 65, 163, 1)" }}>Skills</span>{" "}
+            <br />
+            To <span style={{ color: "rgba(124, 65, 163, 1)" }}>
+              Advance
+            </span>{" "}
+            Your <br />{" "}
+            <span style={{ color: "rgba(124, 65, 163, 1)" }}>Career</span> Path
+          </h1>
+        </div>
+        <div className="absolute inset-0 flex items-center justify-start text-white">
+          <p className="text-base text-gray-600 pl-24 pt-24">
+            Learn UI-UX Design skills with NextGen UX . The latest online <br />{" "}
+            learning system and material that help you to be creative.
+          </p>
+        </div>
+        <div className="absolute inset-0 flex items-center justify-start text-white pt-56">
+          <ul className="flex space-x-4 pl-24 pt-8">
+            <li className="cursor-pointer">
+              <Link
+                to="#"
+                className="w-full px-5 py-3 font-semibold rounded-lg border-4 text-white"
+                style={{
+                  backgroundColor: "rgba(124, 65, 163, 1)",
+                  borderColor: "rgba(244, 235, 255, 1)",
+                }}
+              >
+                Get Started
+              </Link>
+            </li>
+            <li className="cursor-pointer">
+              <Link
+                to="#"
+                className="w-full px-5 py-3 font-semibold rounded-lg border-2 bg-purple-100"
+                style={{
+                  borderColor: "rgba(244, 235, 255, 1)",
+                  color: "rgba(124, 65, 163, 1)",
+                }}
+              >
+                Get free trial
+              </Link>
+            </li>
+          </ul>
+        </div>
+        <div className="absolute inset-0 flex flex-col items-start justify-start pl-24 pt-96">
+          <div className="flex space-x-8 pt-48">
+            <div className="flex items-center space-x-2">
+              <img src={Speak} alt="Speak" className="w-7 h-7" />
+              <span className="text-gray-600 text-base">Public Speaking</span>
+            </div>
+            <div className="flex items-center space-x-2">
+              <img src={Vector} alt="Vector" className="w-7 h-7" />
+              <span className="text-gray-600 text-base">Career-Oriented</span>
+            </div>
+            <div className="flex items-center space-x-2">
+              <img src={idea} alt="idea" className="w-7 h-7" />
+              <span className="text-gray-600 text-base">Creative Thinking</span>
+            </div>
+          </div>
+
+          <div className="mt-16">
+            <h1
+              className="text-3xl font-bold"
+              style={{ color: "rgba(124, 65, 163, 1)" }}
+            >
+              250+
+            </h1>
+            <h1 className="text-2xl text-black">Collaboration</h1>
+          </div>
+        </div>
+      </div>
+      {/* End Hero */}
+
       {/* Start Services */}
-      <div className="container mx-auto px-20 pb-16 pt-28 bg-white">
+      <div className="container mx-auto px-20 pb-16 pt-20 bg-white">
         <h2
           className="text-center text-base font-semibold"
           style={{ color: "rgba(136, 73, 178, 0.94)" }}
