@@ -152,7 +152,7 @@ export default function Contact() {
                 </a>
               </div>
             </div>
-            <div className="w-96 h-36">
+            <div className="w-90 h-36">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4604.510007749279!2d-117.01060585123841!3d33.119068497518676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dbf2676912cf35%3A0x77cf1158314111de!2s2335%20Orchard%20View%20Ln%2C%20Escondido%2C%20CA%2092027%2C%20USA!5e0!3m2!1sen!2sin!4v1723895067472!5m2!1sen!2sin"
                 width="600"

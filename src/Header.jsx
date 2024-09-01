@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import logo from "./logo.png";
 
 export default function Header() {
@@ -10,7 +10,7 @@ export default function Header() {
     <header className="p-4 bg-white text-black py-9 px-12 fixed w-full z-50">
       <div className="container flex justify-between h-9 mx-auto px-12">
         {/* Logo */}
-        <Link
+        <NavLink
           to="/"
           rel="noopener noreferrer"
           aria-label="Back to homepage"
@@ -21,10 +21,10 @@ export default function Header() {
             alt="logo"
             style={{ width: "70px", height: "60px" }}
           />
-        </Link>
+        </NavLink>
 
         {/* Search and Explore Section */}
-        <div className="flex items-center border border-gray-300 rounded-lg overflow-hidden">
+        <div className="flex items-center border border-gray-300 rounded-lg">
           <div className="flex items-center px-3">
             <svg
               className="w-5 h-5 text-gray-400"
@@ -74,7 +74,7 @@ export default function Header() {
 
             {/* Dropdown Menu */}
             {isOpen && (
-              <ul className="absolute right-0 mt-2 bg-white border border-gray-200 rounded-md shadow-lg w-40">
+              <ul className="absolute mt-2 bg-white border border-gray-300 rounded-md shadow-lg">
                 <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
                   <a href="#">Course 1</a>
                 </li>
@@ -89,63 +89,97 @@ export default function Header() {
         {/* Navigation Links */}
         <ul className="items-stretch hidden space-x-3 lg:flex">
           <li className="flex">
-            <Link
+            <NavLink
               to="/"
-              className="flex items-center ml-2 font-semibold -mb-1 border-b-2 border-transparent border-red-600"
+              className={({ isActive }) =>
+                isActive
+                  ? "nav-link flex items-center ml-2 font-semibold -mb-1 text-purple-800"
+                  : "nav-link flex items-center ml-2 font-semibold -mb-1 hover:text-purple-800"
+              }
             >
               Home
-            </Link>
+            </NavLink>
           </li>
           <li className="flex">
-            <Link
+            <NavLink
               to="/About"
-              className="flex items-center px-1 font-semibold -mb-1 border-b-2 border-transparent"
+              className={({ isActive }) =>
+                isActive
+                  ? "nav-link flex items-center px-1 font-semibold -mb-1 text-purple-800"
+                  : "nav-link flex items-center px-1 font-semibold -mb-1 hover:text-purple-800"
+              }
             >
               About us
-            </Link>
+            </NavLink>
           </li>
           <li className="flex">
-            <Link
-              className="flex items-center px-1 font-semibold -mb-1 border-b-2 border-transparent"
+            <NavLink
+              to="/Courses"
+              className={({ isActive }) =>
+                isActive
+                  ? "flex items-center px-1 font-semibold -mb-1 text-purple-800"
+                  : "flex items-center px-1 font-semibold -mb-1 hover:text-purple-800"
+              }
             >
               Courses
-            </Link>
+            </NavLink>
           </li>
           <li className="flex">
-            <Link
+            <NavLink
               to="/Contact"
-              className="flex items-center px-1 font-semibold -mb-1 border-b-2 border-transparent"
+              className={({ isActive }) =>
+                isActive
+                  ? "flex items-center px-1 font-semibold -mb-1 text-purple-800"
+                  : "flex items-center px-1 font-semibold -mb-1 hover:text-purple-800"
+              }
             >
               Contact us
-            </Link>
+            </NavLink>
           </li>
           <li className="flex">
-            <Link
-              className="flex items-center font-semibold -mb-1 border-b-2 border-transparent"
+            <NavLink
+              to="/FAQ"
+              className={({ isActive }) =>
+                isActive
+                  ? "flex items-center font-semibold -mb-1 text-purple-800"
+                  : "flex items-center font-semibold -mb-1 hover:text-purple-800"
+              }
             >
               FAQ's
-            </Link>
+            </NavLink>
           </li>
         </ul>
 
         {/* Authentication Buttons */}
         <div className="items-center flex-shrink-0 hidden lg:flex">
-          <Link
+          <NavLink
             to="/SignIn"
-            className="self-center px-4 py-3 font-semibold rounded"
+            className={({ isActive }) =>
+              isActive
+                ? "self-center px-4 py-3 font-semibold rounded text-purple-800"
+                : "self-center px-4 py-3 font-semibold rounded hover:text-purple-800"
+            }
           >
             Sign in
-          </Link>
-          <Link
+          </NavLink>
+          <NavLink
             to="/CreateAccount"
-            className="self-center px-5 py-2 font-semibold rounded-lg border-4 text-gray-50"
-            style={{
-              backgroundColor: "rgba(124, 65, 163, 1)",
-              borderColor: "rgba(244, 235, 255, 1)",
-            }}
+            className={({ isActive }) =>
+              isActive
+                ? "self-center px-5 py-2 font-semibold rounded-lg border-4 text-purple-800"
+                : "self-center px-5 py-2 font-semibold rounded-lg border-4 text-gray-50"
+            }
+            style={({ isActive }) =>
+              !isActive
+                ? {
+                    backgroundColor: "rgba(124, 65, 163, 1)",
+                    borderColor: "rgba(244, 235, 255, 1)",
+                  }
+                : {}
+            }
           >
             Create free account
-          </Link>
+          </NavLink>
         </div>
 
         {/* Mobile Menu Button */}
@@ -172,42 +206,92 @@ export default function Header() {
 
       {/* Mobile Navigation Links */}
       <div
-        className={`lg:hidden fixed top-0 right-0 h-full bg-white shadow-lg z-50 w-64 transform transition-transform duration-300 ${
+        className={`lg:hidden fixed top-20 right-0 h-full bg-white shadow-lg z-50 w-64 transform transition-transform duration-300 ${
           isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
         <ul className="flex flex-col space-y-2 mt-4 p-4">
-          <li className="px-4 py-2 font-semibold hover:bg-gray-100 cursor-pointer">
-            <Link to="/">Home</Link>
-          </li>
-          <li className="px-4 py-2 font-semibold hover:bg-gray-100 cursor-pointer">
-            <Link to="/About">About us</Link>
-          </li>
-          <li className="px-4 py-2 font-semibold hover:bg-gray-100 cursor-pointer">
-            <a href="#">Courses</a>
-          </li>
-          <li className="px-4 py-2 font-semibold hover:bg-gray-100 cursor-pointer">
-            <Link to="/Contact">Contact us</Link>
-          </li>
-          <li className="px-4 py-2 font-semibold hover:bg-gray-100 cursor-pointer">
-            <a href="#">FAQ's</a>
+          <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                isActive ? "font-semibold text-purple-800" : "font-semibold"
+              }
+            >
+              Home
+            </NavLink>
           </li>
           <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-            <Link to="/SignIn" className="w-full font-semibold text-black">
+            <NavLink
+              to="/About"
+              className={({ isActive }) =>
+                isActive ? "font-semibold text-purple-800" : "font-semibold"
+              }
+            >
+              About us
+            </NavLink>
+          </li>
+          <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+            <NavLink
+              to="/Courses"
+              className={({ isActive }) =>
+                isActive ? "font-semibold text-purple-800" : "font-semibold"
+              }
+            >
+              Courses
+            </NavLink>
+          </li>
+          <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+            <NavLink
+              to="/Contact"
+              className={({ isActive }) =>
+                isActive ? "font-semibold text-purple-800" : "font-semibold"
+              }
+            >
+              Contact us
+            </NavLink>
+          </li>
+          <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+            <NavLink
+              to="/FAQ"
+              className={({ isActive }) =>
+                isActive ? "font-semibold text-purple-800" : "font-semibold"
+              }
+            >
+              FAQ's
+            </NavLink>
+          </li>
+          <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+            <NavLink
+              to="/SignIn"
+              className={({ isActive }) =>
+                isActive
+                  ? "w-full font-semibold text-purple-800"
+                  : "w-full font-semibold text-black"
+              }
+            >
               Sign in
-            </Link>
+            </NavLink>
           </li>
           <li className="px-4 py-2 cursor-pointer">
-            <Link
+            <NavLink
               to="/CreateAccount"
-              className="w-full px-4 py-2 font-semibold rounded-lg border-4 text-gray-50"
-              style={{
-                backgroundColor: "rgba(124, 65, 163, 1)",
-                borderColor: "rgba(244, 235, 255, 1)",
-              }}
+              className={({ isActive }) =>
+                isActive
+                  ? "w-full px-4 py-2 font-semibold rounded-lg border-4 text-purple-800"
+                  : "w-full px-4 py-2 font-semibold rounded-lg border-4 text-gray-50"
+              }
+              style={({ isActive }) =>
+                !isActive
+                  ? {
+                      backgroundColor: "rgba(124, 65, 163, 1)",
+                      borderColor: "rgba(244, 235, 255, 1)",
+                    }
+                  : {}
+              }
             >
               Create free account
-            </Link>
+            </NavLink>
           </li>
         </ul>
       </div>

@@ -25,7 +25,6 @@ import BlogImage2 from "./images/BlogImage2.png";
 import BlogImage3 from "./images/BlogImage3.png";
 
 function Home() {
-  
   const [centerIndex, setCenterIndex] = useState(1);
 
   const settings = {
@@ -285,32 +284,32 @@ function Home() {
   return (
     <>
       {/* Start Hero */}
-      <div className="relative container">
-        <img src={Hero} alt="Hero Image" className="w-full h-auto" />
-        <div className="absolute inset-0 flex items-center justify-start text-white">
-          <h1 className="text-6xl text-black font-bold pl-24 pb-52 leading-tight">
+      <div className="relative w-full">
+        <img
+          src={Hero}
+          alt="Hero Image"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 flex flex-col justify-center px-6 md:px-24 text-white space-y-8">
+          <h1 className="text-4xl md:text-6xl font-bold text-black leading-tight">
             Upgrade Your{" "}
-            <span style={{ color: "rgba(124, 65, 163, 1)" }}>Skills</span>{" "}
+            <span style={{ color: "rgba(124, 65, 163, 1)" }}>Skills</span>
             <br />
             To <span style={{ color: "rgba(124, 65, 163, 1)" }}>
               Advance
             </span>{" "}
-            Your <br />{" "}
+            Your <br />
             <span style={{ color: "rgba(124, 65, 163, 1)" }}>Career</span> Path
           </h1>
-        </div>
-        <div className="absolute inset-0 flex items-center justify-start text-white">
-          <p className="text-base text-gray-600 pl-24 pt-24">
-            Learn UI-UX Design skills with NextGen UX . The latest online <br />{" "}
+          <p className="text-sm md:text-base text-gray-600">
+            Learn UI-UX Design skills with NextGen UX. The latest online <br />
             learning system and material that help you to be creative.
           </p>
-        </div>
-        <div className="absolute inset-0 flex items-center justify-start text-white pt-56">
-          <ul className="flex space-x-4 pl-24 pt-8">
-            <li className="cursor-pointer">
+          <ul className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+            <li>
               <Link
                 to="#"
-                className="w-full px-5 py-3 font-semibold rounded-lg border-4 text-white"
+                className="px-5 py-3 font-semibold rounded-lg border-4 text-white"
                 style={{
                   backgroundColor: "rgba(124, 65, 163, 1)",
                   borderColor: "rgba(244, 235, 255, 1)",
@@ -319,10 +318,10 @@ function Home() {
                 Get Started
               </Link>
             </li>
-            <li className="cursor-pointer">
+            <li>
               <Link
                 to="#"
-                className="w-full px-5 py-3 font-semibold rounded-lg border-2 bg-purple-100"
+                className="px-5 py-3 font-semibold rounded-lg border-2 bg-purple-100"
                 style={{
                   borderColor: "rgba(244, 235, 255, 1)",
                   color: "rgba(124, 65, 163, 1)",
@@ -332,9 +331,7 @@ function Home() {
               </Link>
             </li>
           </ul>
-        </div>
-        <div className="absolute inset-0 flex flex-col items-start justify-start pl-24 pt-96">
-          <div className="flex space-x-8 pt-48">
+          <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8 pt-8">
             <div className="flex items-center space-x-2">
               <img src={Speak} alt="Speak" className="w-7 h-7" />
               <span className="text-gray-600 text-base">Public Speaking</span>
@@ -348,8 +345,7 @@ function Home() {
               <span className="text-gray-600 text-base">Creative Thinking</span>
             </div>
           </div>
-
-          <div className="mt-16">
+          <div className="mt-8">
             <h1
               className="text-3xl font-bold"
               style={{ color: "rgba(124, 65, 163, 1)" }}
@@ -360,395 +356,384 @@ function Home() {
           </div>
         </div>
       </div>
+
       {/* End Hero */}
 
       {/* Start Services */}
-      <div className="container mx-auto px-20 pb-16 pt-20 bg-white">
-        <h2
-          className="text-center text-base font-semibold"
-          style={{ color: "rgba(136, 73, 178, 0.94)" }}
-        >
-          Our Services
-        </h2>
-        <p className="text-center text-4xl font-bold text-black mt-4">
-          Cultivating a lively and engaging atmosphere <br /> for learning
-        </p>
-        <Slider {...settings} className="mt-8">
-          <div className="p-4">
-            <div
-              className={`rounded-xl p-6 border-2 transition-colors duration-500 ${
-                centerIndex === 2 ? "" : ""
-              }`}
-              style={
-                centerIndex === 2
-                  ? { backgroundColor: "rgba(124, 65, 163, 1)", color: "white" }
-                  : { backgroundColor: "white", color: "black" }
-              }
-            >
+      <div className="w-full bg-white py-18 pb-12">
+        <div className="container mx-auto px-6 lg:px-24">
+          <h2
+            className="text-center text-base font-semibold"
+            style={{ color: "rgba(136, 73, 178, 0.94)" }}
+          >
+            Our Services
+          </h2>
+          <p className="text-center text-4xl font-bold text-black mt-4">
+            Cultivating a lively and engaging atmosphere <br /> for learning
+          </p>
+          <Slider {...settings} className="mt-8">
+            <div className="p-4">
               <div
-                className={`text-2xl mb-8 mt-2 flex items-center`}
-                style={
-                  centerIndex === 2 ? { color: "white" } : { color: "blue" }
-                }
-              >
-                <span
-                  role="img"
-                  aria-label="Interactive Design"
-                  className="mr-5"
-                >
-                  <img
-                    src={Frame1}
-                    alt="Frame1"
-                    style={{ width: "40px", height: "40px" }}
-                  />
-                </span>
-                <h3
-                  className={`text-xl font-bold`}
-                  style={
-                    centerIndex === 2 ? { color: "white" } : { color: "black" }
-                  }
-                >
-                  UX Design Course
-                </h3>
-              </div>
-              <p
-                className={`mt-2`}
-                style={
-                  centerIndex === 2 ? { color: "white" } : { color: "gray" }
-                }
-              >
-                Courses focused on the latest trends and innovations in web
-                development.
-              </p>
-              <a
-                href="#"
-                className={`mt-4 inline-block font-semibold flex items-center`}
+                className={`rounded-xl p-6 border-2 transition-colors duration-500 ${
+                  centerIndex === 2 ? "" : ""
+                }`}
                 style={
                   centerIndex === 2
-                    ? { color: "white" }
-                    : { color: "rgba(124, 65, 163, 1)" }
+                    ? {
+                        backgroundColor: "rgba(124, 65, 163, 1)",
+                        color: "white",
+                      }
+                    : { backgroundColor: "white", color: "black" }
                 }
               >
-                Learn More
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  className="w-4 h-4 ml-3"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
-              </a>
-            </div>
-          </div>
-          <div className="p-4">
-            <div
-              className={`rounded-xl p-6 border-2 transition-colors duration-500 ${
-                centerIndex === 0 ? "" : ""
-              }`}
-              style={
-                centerIndex === 0
-                  ? { backgroundColor: "rgba(124, 65, 163, 1)", color: "white" }
-                  : { backgroundColor: "white", color: "black" }
-              }
-            >
-              <div
-                className={`text-2xl mb-8 mt-2 flex items-center`}
-                style={
-                  centerIndex === 0 ? { color: "white" } : { color: "blue" }
-                }
-              >
-                <span
-                  role="img"
-                  aria-label="Interactive Design"
-                  className="mr-5"
-                >
-                  <img
-                    src={Frame2}
-                    alt="Frame2"
-                    style={{ width: "40px", height: "40px" }}
-                  />
-                </span>
-                <h3
-                  className={`text-xl font-bold`}
+                <div
+                  className={`text-2xl mb-8 mt-2 flex items-center`}
                   style={
-                    centerIndex === 0 ? { color: "white" } : { color: "black" }
+                    centerIndex === 2 ? { color: "white" } : { color: "blue" }
                   }
                 >
-                  Interactive Design
-                </h3>
+                  <span
+                    role="img"
+                    aria-label="Interactive Design"
+                    className="mr-5"
+                  >
+                    <img
+                      src={Frame1}
+                      alt="Frame1"
+                      style={{ width: "40px", height: "40px" }}
+                    />
+                  </span>
+                  <h3
+                    className={`text-xl font-bold`}
+                    style={
+                      centerIndex === 2
+                        ? { color: "white" }
+                        : { color: "black" }
+                    }
+                  >
+                    UX Design Course
+                  </h3>
+                </div>
+                <p
+                  className={`mt-2`}
+                  style={
+                    centerIndex === 2 ? { color: "white" } : { color: "gray" }
+                  }
+                >
+                  Courses focused on the latest trends <br /> and innovations in
+                  web development.
+                </p>
+                <a
+                  href="#"
+                  className={`mt-4 inline-block font-semibold flex items-center`}
+                  style={
+                    centerIndex === 2
+                      ? { color: "white" }
+                      : { color: "rgba(124, 65, 163, 1)" }
+                  }
+                >
+                  Learn More
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    className="w-4 h-4 ml-3"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </a>
               </div>
-              <p
-                className={`mt-2`}
-                style={
-                  centerIndex === 0 ? { color: "white" } : { color: "gray" }
-                }
-              >
-                Courses on design that explore <br /> the latest industry
-                advancements.
-              </p>
-              <a
-                href="#"
-                className={`mt-4 inline-block font-semibold flex items-center`}
+            </div>
+            <div className="p-4">
+              <div
+                className={`rounded-xl p-6 border-2 transition-colors duration-500 ${
+                  centerIndex === 0 ? "" : ""
+                }`}
                 style={
                   centerIndex === 0
-                    ? { color: "white" }
-                    : { color: "rgba(124, 65, 163, 1)" }
+                    ? {
+                        backgroundColor: "rgba(124, 65, 163, 1)",
+                        color: "white",
+                      }
+                    : { backgroundColor: "white", color: "black" }
                 }
               >
-                Learn More
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  className="w-4 h-4 ml-3"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
-              </a>
-            </div>
-          </div>
-          <div className="p-4">
-            <div
-              className={`rounded-xl p-6 border-2 transition-colors duration-500 ${
-                centerIndex === 1 ? "" : ""
-              }`}
-              style={
-                centerIndex === 1
-                  ? { backgroundColor: "rgba(124, 65, 163, 1)", color: "white" }
-                  : { backgroundColor: "white", color: "black" }
-              }
-            >
-              <div
-                className={`text-2xl mb-8 mt-2 flex items-center`}
-                style={
-                  centerIndex === 1 ? { color: "white" } : { color: "blue" }
-                }
-              >
-                <span role="img" aria-label="UI Design" className="mr-5">
-                  <img
-                    src={Frame3}
-                    alt="Frame3"
-                    style={{ width: "40px", height: "40px" }}
-                  />
-                </span>
-                <h3
-                  className={`text-xl font-bold`}
+                <div
+                  className={`text-2xl mb-8 mt-2 flex items-center`}
                   style={
-                    centerIndex === 1 ? { color: "white" } : { color: "black" }
+                    centerIndex === 0 ? { color: "white" } : { color: "blue" }
                   }
                 >
-                  User Interface Design
-                </h3>
+                  <span
+                    role="img"
+                    aria-label="Interactive Design"
+                    className="mr-5"
+                  >
+                    <img
+                      src={Frame2}
+                      alt="Frame2"
+                      style={{ width: "40px", height: "40px" }}
+                    />
+                  </span>
+                  <h3
+                    className={`text-xl font-bold`}
+                    style={
+                      centerIndex === 0
+                        ? { color: "white" }
+                        : { color: "black" }
+                    }
+                  >
+                    Interactive Design
+                  </h3>
+                </div>
+                <p
+                  className={`mt-2`}
+                  style={
+                    centerIndex === 0 ? { color: "white" } : { color: "gray" }
+                  }
+                >
+                  Courses on design that explore <br /> the latest industry
+                  advancements.
+                </p>
+                <a
+                  href="#"
+                  className={`mt-4 inline-block font-semibold flex items-center`}
+                  style={
+                    centerIndex === 0
+                      ? { color: "white" }
+                      : { color: "rgba(124, 65, 163, 1)" }
+                  }
+                >
+                  Learn More
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    className="w-4 h-4 ml-3"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </a>
               </div>
-              <p
-                className={`mt-2`}
-                style={
-                  centerIndex === 1 ? { color: "white" } : { color: "gray" }
-                }
-              >
-                UI Design classes that explore <br /> cutting-edge trends and
-                innovations.
-              </p>
-              <a
-                href="#"
-                className={`mt-4 inline-block font-semibold flex items-center`}
+            </div>
+            <div className="p-4">
+              <div
+                className={`rounded-xl p-6 border-2 transition-colors duration-500 ${
+                  centerIndex === 1 ? "" : ""
+                }`}
                 style={
                   centerIndex === 1
-                    ? { color: "white" }
-                    : { color: "rgba(124, 65, 163, 1)" }
+                    ? {
+                        backgroundColor: "rgba(124, 65, 163, 1)",
+                        color: "white",
+                      }
+                    : { backgroundColor: "white", color: "black" }
                 }
               >
-                Learn More
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  className="w-4 h-4 ml-3"
+                <div
+                  className={`text-2xl mb-8 mt-2 flex items-center`}
+                  style={
+                    centerIndex === 1 ? { color: "white" } : { color: "blue" }
+                  }
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
-              </a>
+                  <span role="img" aria-label="UI Design" className="mr-5">
+                    <img
+                      src={Frame3}
+                      alt="Frame3"
+                      style={{ width: "40px", height: "40px" }}
+                    />
+                  </span>
+                  <h3
+                    className={`text-xl font-bold`}
+                    style={
+                      centerIndex === 1
+                        ? { color: "white" }
+                        : { color: "black" }
+                    }
+                  >
+                    User Interface Design
+                  </h3>
+                </div>
+                <p
+                  className={`mt-2`}
+                  style={
+                    centerIndex === 1 ? { color: "white" } : { color: "gray" }
+                  }
+                >
+                  UI Design classes that explore <br /> cutting-edge trends and
+                  innovations.
+                </p>
+                <a
+                  href="#"
+                  className={`mt-4 inline-block font-semibold flex items-center`}
+                  style={
+                    centerIndex === 1
+                      ? { color: "white" }
+                      : { color: "rgba(124, 65, 163, 1)" }
+                  }
+                >
+                  Learn More
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    className="w-4 h-4 ml-3"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </a>
+              </div>
             </div>
-          </div>
-        </Slider>
+          </Slider>
+        </div>
       </div>
       {/* End Services */}
 
       {/* Start Programs */}
-      <div className="container mx-auto px-24 py-8 bg-white">
-        <h2
-          className="text-base font-semibold mb-2"
-          style={{ color: "rgba(136, 73, 178, 0.94)" }}
-        >
-          Explore Programs
-        </h2>
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">
-          Our Most Popular Class
-        </h1>
-        <p className="text-gray-500 text-xl mb-8">
-          Step into our acclaimed class, where cutting-edge insights and
-          expertise await to enhance your skills.
-        </p>
-        <Slider {...settings1}>
-          {courses.map((course, index) => (
-            <div key={index}>
-              <CourseCard {...course} />
-            </div>
-          ))}
-        </Slider>
-        <div className="text-center mt-14">
-          <button
-            href="#"
-            className="bg-gray-100 text-black text-sm py-2 px-4 border-2 rounded-lg font-bold transition hover:bg-[rgba(124,65,163,1)] hover:text-white"
+      <div className="w-full bg-white py-8">
+        <div className="container mx-auto px-6 lg:px-24">
+          <h2
+            className="text-base font-semibold mb-2"
+            style={{ color: "rgba(136, 73, 178, 0.94)" }}
           >
-            Explore All Programs
-          </button>
+            Explore Programs
+          </h2>
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+            Our Most Popular Class
+          </h1>
+          <p className="text-gray-500 text-xl mb-8">
+            Step into our acclaimed class, where cutting-edge insights and
+            expertise await to enhance your skills.
+          </p>
+          <Slider {...settings1}>
+            {courses.map((course, index) => (
+              <div key={index}>
+                <CourseCard {...course} />
+              </div>
+            ))}
+          </Slider>
+          <div className="text-center mt-14">
+            <button
+              href="#"
+              className="bg-gray-100 text-black text-sm py-2 px-4 border-2 rounded-lg font-bold transition hover:bg-[rgba(124,65,163,1)] hover:text-white"
+            >
+              Explore All Programs
+            </button>
+          </div>
         </div>
       </div>
       {/* End Programs */}
 
       {/* Start Tutors */}
-      <div className="container bg-white mx-auto pt-10 pb-16 px-24">
-        <h2
-          className="text-center text-base font-semibold"
-          style={{ color: "rgba(136, 73, 178, 0.94)" }}
-        >
-          Tutors
-        </h2>
-        <p className="text-center text-4xl font-bold text-black mt-3">
-          Meet the Heroes
-        </p>
-        <p className="text-center text-xl text-gray-500 mt-5 mb-10">
-          On Weekend UX, instructors from all over the world instruct millions
-          of students. <br /> We offer the knowledge and abilities.
-        </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {tutors.map((tutor, index) => (
-            <TutorCard
-              key={index}
-              name={tutor.name}
-              title={tutor.title}
-              description={tutor.description}
-              imageUrl={tutor.imageUrl}
-            />
-          ))}
+      <div className="w-full bg-white pt-10 pb-16">
+        <div className="container mx-auto px-6 lg:px-24">
+          <h2
+            className="text-center text-base font-semibold"
+            style={{ color: "rgba(136, 73, 178, 0.94)" }}
+          >
+            Tutors
+          </h2>
+          <p className="text-center text-4xl font-bold text-black mt-3">
+            Meet the Heroes
+          </p>
+          <p className="text-center text-xl text-gray-500 mt-5 mb-10">
+            On Weekend UX, instructors from all over the world instruct millions
+            of students. <br /> We offer the knowledge and abilities.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {tutors.map((tutor, index) => (
+              <TutorCard
+                key={index}
+                name={tutor.name}
+                title={tutor.title}
+                description={tutor.description}
+                imageUrl={tutor.imageUrl}
+              />
+            ))}
+          </div>
         </div>
       </div>
       {/* End Tutors */}
 
       {/* Start info*/}
-      <div className="container py-16 px-8 text-center bg-purple-100">
-        <div className="inline-block text-white p-6 rounded-full mb-4">
-          <img src={logo} alt="Logo" className="w-18 h-16" />
-        </div>
-        <p
-          className="font-semibold text-purple-950 mb-8"
-          style={{ fontSize: "42px" }}
-        >
-          The courses were fantastic! It's a premier platform for <br /> anyone
-          starting a new career or seeking a refresher.
-        </p>
-        <div className="flex justify-center items-center pb-3">
-          <img
-            src={Avatar2}
-            alt="John Jones"
-            className="w-14 h-14 rounded-full"
-          />
-        </div>
-        <div className="pb-4">
-          <h3 className="text-lg font-semibold text-purple-900">John Jones</h3>
-          <p className="text-gray-500">Student, National University</p>
+      <div className="w-full py-16 px-6 text-center bg-purple-100">
+        <div className="max-w-5xl mx-auto">
+          <div className="inline-block text-white p-6 rounded-full mb-4">
+            <img src={logo} alt="Logo" className="w-18 h-16" />
+          </div>
+          <h1 className="font-semibold text-purple-950 mb-8 text-4xl">
+            The courses were fantastic! It's a premier platform for anyone
+            starting a new career or seeking a refresher.
+          </h1>
+          <div className="flex justify-center items-center pb-3">
+            <img
+              src={Avatar2}
+              alt="John Jones"
+              className="w-14 h-14 rounded-full"
+            />
+          </div>
+          <div className="pb-4">
+            <h3 className="text-lg font-semibold text-purple-900">
+              John Jones
+            </h3>
+            <p className="text-gray-500">Student, National University</p>
+          </div>
         </div>
       </div>
       {/* End info*/}
 
       {/* Start Blogs */}
-      <div className="container mx-auto pt-10 pb-4 bg-white px-24">
-        <h2 className="text-3xl text-black font-bold mb-8">Our Recent Blogs</h2>
-        <div className="flex">
-          {/* Left Side Card */}
-          <div className="w-2/4 pr-4">
-            <div className="overflow-hidden mb-8">
-              <img
-                src={blogs[0].image}
-                alt={blogs[0].title}
-                className="object-cover"
-                style={{ width: "520px", height: "220px" }}
-              />
-              <div className="p-6">
-                <p
-                  className="text-purple-600 text-xs font-semibold mb-2"
-                  style={{ color: "rgba(136, 73, 178, 0.94)" }}
-                >
-                  {blogs[0].date}
-                </p>
-                <h3 className="text-xl text-black font-semibold mb-1">
-                  {blogs[0].title}
-                </h3>
-                <p className="text-gray-600 text-base mb-4">
-                  {blogs[0].description}
-                </p>
-                <div className="flex space-x-2">
-                  {blogs[0].categories.map((category, index) => (
-                    <span
-                      key={index}
-                      className="bg-purple-100 text-purple-800 py-1 px-3 font-semibold rounded-full text-xs"
-                    >
-                      {category}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Right Side Cards */}
-          <div className="w-2/4 space-y-6">
-            {blogs.slice(1).map((blog, index) => (
-              <div key={index} className="flex overflow-hidden">
+      <div className="w-full bg-white pt-10 pb-4">
+        <div className="container mx-auto px-24">
+          <h2 className="text-3xl text-black font-bold mb-8">
+            Our Recent Blogs
+          </h2>
+          <div className="flex flex-wrap">
+            {/* Left Side Card */}
+            <div className="w-full lg:w-2/4 pr-4">
+              <div className="overflow-hidden mb-8">
                 <img
-                  src={blog.image}
-                  alt={blog.title}
-                  className="w-3/4 object-cover"
-                  style={{ width: "380px", height: "180px" }}
+                  src={blogs[0].image}
+                  alt={blogs[0].title}
+                  className="object-cover w-full"
+                  style={{ height: "220px" }}
                 />
-                <div className="pl-4 flex flex-col justify-between">
-                  <div>
-                    <p
-                      className="text-purple-600 text-xs font-semibold mb-2"
-                      style={{ color: "rgba(136, 73, 178, 0.94)" }}
-                    >
-                      {blog.date}
-                    </p>
-                    <h3 className="text-black text-base font-semibold mb-1">
-                      {blog.title}
-                    </h3>
-                    <p className="text-gray-600 mb-4">{blog.description}</p>
-                  </div>
-                  <div className="flex space-x-2 mb-2">
-                    {blog.categories.map((category, index) => (
+                <div className="p-6">
+                  <p
+                    className="text-purple-600 text-xs font-semibold mb-2"
+                    style={{ color: "rgba(136, 73, 178, 0.94)" }}
+                  >
+                    {blogs[0].date}
+                  </p>
+                  <h3 className="text-xl text-black font-semibold mb-1">
+                    {blogs[0].title}
+                  </h3>
+                  <p className="text-gray-600 text-base mb-4">
+                    {blogs[0].description}
+                  </p>
+                  <div className="flex space-x-2">
+                    {blogs[0].categories.map((category, index) => (
                       <span
                         key={index}
-                        className="bg-purple-100 text-purple-800 py-1 px-3 font-semibold rounded-full text-xs"
+                        className="bg-purple-100 text-purple-800 py-1 px-2 font-semibold rounded-full text-xs"
                       >
                         {category}
                       </span>
@@ -756,10 +741,49 @@ function Home() {
                   </div>
                 </div>
               </div>
-            ))}
+            </div>
+
+            {/* Right Side Cards */}
+            <div className="w-full lg:w-2/4 space-y-6">
+              {blogs.slice(1).map((blog, index) => (
+                <div key={index} className="flex overflow-hidden mb-6">
+                  <img
+                    src={blog.image}
+                    alt={blog.title}
+                    className="object-cover w-1/2"
+                    style={{ height: "180px" }}
+                  />
+                  <div className="pl-4 flex flex-col justify-between w-1/2">
+                    <div>
+                      <p
+                        className="text-purple-600 text-xs font-semibold mb-2"
+                        style={{ color: "rgba(136, 73, 178, 0.94)" }}
+                      >
+                        {blog.date}
+                      </p>
+                      <h3 className="text-black text-base font-semibold mb-1">
+                        {blog.title}
+                      </h3>
+                      <p className="text-gray-600 mb-4">{blog.description}</p>
+                    </div>
+                    <div className="flex space-x-2 mb-2">
+                      {blog.categories.map((category, index) => (
+                        <span
+                          key={index}
+                          className="bg-purple-100 text-purple-800 py-1 px-2 font-semibold rounded-full text-xs"
+                        >
+                          {category}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
+
       {/* End Blogs */}
     </>
   );

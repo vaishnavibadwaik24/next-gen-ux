@@ -132,7 +132,7 @@ export default function About() {
           </div>
           <div className="flex flex-col justify-center p-4 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left">
             <h1
-              className="text-2xl font-bold"
+              className="pt-14 text-2xl font-bold"
               style={{ color: "rgba(124, 65, 163, 1)" }}
             >
               Features
