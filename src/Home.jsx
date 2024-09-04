@@ -7,6 +7,9 @@ import Hero from "./images/Hero.png";
 import Speak from "./images/Speak.png";
 import Vector from "./images/Vector.png";
 import idea from "./images/idea.svg";
+import ProgressCircle from "./images/ProgressCircle.png";
+import icon1 from "./images/icon1.png";
+import icon2 from "./images/icon2.png";
 import { FaClock } from "react-icons/fa";
 import Slider from "react-slick";
 import Frame1 from "./images/Frame1.png";
@@ -284,83 +287,126 @@ function Home() {
   return (
     <>
       {/* Start Hero */}
-      <div className="relative w-full">
-        <img
-          src={Hero}
-          alt="Hero Image"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 flex flex-col justify-center px-6 md:px-24 text-white space-y-8">
-          <h1 className="text-4xl md:text-6xl font-bold text-black leading-tight">
-            Upgrade Your{" "}
-            <span style={{ color: "rgba(124, 65, 163, 1)" }}>Skills</span>
-            <br />
-            To <span style={{ color: "rgba(124, 65, 163, 1)" }}>
-              Advance
-            </span>{" "}
-            Your <br />
-            <span style={{ color: "rgba(124, 65, 163, 1)" }}>Career</span> Path
-          </h1>
-          <p className="text-sm md:text-base text-gray-600">
-            Learn UI-UX Design skills with NextGen UX. The latest online <br />
-            learning system and material that help you to be creative.
-          </p>
-          <ul className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
-            <li>
+      <div className="relative w-full h-screen flex items-center justify-center px-4 md:px-8 lg:px-16 bg-white">
+        <div className="flex flex-col md:flex-row items-center justify-between w-full mx-auto pt-28">
+          <div className="flex-1 text-left md:pr-8 pt-24">
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-black pb-2">
+              Upgrade Your{" "}
+              <span style={{ color: "rgba(124, 65, 163, 1)" }}>Skills</span>{" "}
+              <br />
+              To <span style={{ color: "rgba(124, 65, 163, 1)" }}>
+                Advance
+              </span>{" "}
+              Your <br />
+              <span style={{ color: "rgba(124, 65, 163, 1)" }}>
+                Career
+              </span>{" "}
+              Path
+            </h1>
+            <p className="mt-4 text-sm md:text-base lg:text-base text-gray-600 max-w-lg">
+              Learn UI-UX Design skills with NextGen UX. The latest online
+              learning system and material that help you to be creative.
+            </p>
+            <div className="mt-6 flex space-x-4">
               <Link
                 to="#"
-                className="px-5 py-3 font-semibold rounded-lg border-4 text-white"
-                style={{
-                  backgroundColor: "rgba(124, 65, 163, 1)",
-                  borderColor: "rgba(244, 235, 255, 1)",
-                }}
+                className="px-5 py-3 font-semibold rounded-lg text-white"
+                style={{ backgroundColor: "#7C41A3" }}
               >
                 Get Started
               </Link>
-            </li>
-            <li>
               <Link
                 to="#"
-                className="px-5 py-3 font-semibold rounded-lg border-2 bg-purple-100"
-                style={{
-                  borderColor: "rgba(244, 235, 255, 1)",
-                  color: "rgba(124, 65, 163, 1)",
-                }}
+                className="px-5 py-3 font-semibold rounded-lg bg-purple-100"
+                style={{ color: "#7C41A3" }}
               >
                 Get free trial
               </Link>
-            </li>
-          </ul>
-          <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8 pt-8">
-            <div className="flex items-center space-x-2">
-              <img src={Speak} alt="Speak" className="w-7 h-7" />
-              <span className="text-gray-600 text-base">Public Speaking</span>
             </div>
-            <div className="flex items-center space-x-2">
-              <img src={Vector} alt="Vector" className="w-7 h-7" />
-              <span className="text-gray-600 text-base">Career-Oriented</span>
+            <div className="mt-8 flex space-x-6">
+              <div className="flex items-center space-x-2">
+                <img src={Speak} alt="Public Speaking" className="w-6 h-6" />
+                <span className="text-gray-600">Public Speaking</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <img src={Vector} alt="Career-Oriented" className="w-6 h-6" />
+                <span className="text-gray-600">Career-Oriented</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <img src={idea} alt="Creative Thinking" className="w-6 h-6" />
+                <span className="text-gray-600">Creative Thinking</span>
+              </div>
             </div>
-            <div className="flex items-center space-x-2">
-              <img src={idea} alt="idea" className="w-7 h-7" />
-              <span className="text-gray-600 text-base">Creative Thinking</span>
+            <div
+              className="mt-6 text-2xl font-bold"
+              style={{ color: "#7C41A3" }}
+            >
+              250+ <br />
+              <span className="text-black font-normal">Collaboration</span>
             </div>
           </div>
-          <div className="mt-8">
-            <h1
-              className="text-3xl font-bold"
-              style={{ color: "rgba(124, 65, 163, 1)" }}
-            >
-              250+
-            </h1>
-            <h1 className="text-2xl text-black">Collaboration</h1>
+
+          <div className="flex-1 relative md:mt-0">
+            <div className="relative">
+              <img
+                src={Hero}
+                alt="Hero Image"
+                className="rounded-full mx-auto"
+                style={{
+                  width: "420px",
+                  height: "420px",
+                  borderColor: "rgba(124, 65, 163, 1)",
+                  borderWidth: "60px",
+                }}
+              />
+              <div className="absolute top-5 right-8 transform translate-x-8 -translate-y-8 bg-white p-4 rounded-lg shadow-xl border border-purple-700">
+                <div className="px-3 pb-2">
+                  <img
+                    src={ProgressCircle}
+                    alt="Progress Circle"
+                    style={{ width: "70px" }}
+                  />
+                </div>
+                <p className="text-sm text-gray-500 text-center">
+                  {" "}
+                  <span className="font-bold text-black text-2xl">
+                    5K+
+                  </span>{" "}
+                  <br /> Online Courses
+                </p>
+              </div>
+              <div className="absolute top-1/3 left-1/8 transform -translate-x-16 -translate-y-1/2 bg-white px-4 space-x-5 py-3 rounded-lg shadow-xl flex border border-purple-700">
+                <img
+                  src={icon1}
+                  alt="icon"
+                  style={{ width: "46px", height: "46px" }}
+                />
+                <p className="text-gray-500 text-sm">
+                  <span className="font-bold text-black text-2xl">2K+</span>{" "}
+                  <br />
+                  Video Courses
+                </p>
+              </div>
+              <div className="absolute bottom-16 right-8 transform translate-x-1 translate-y-14 bg-white px-4 space-x-2 py-3 rounded-lg shadow-xl flex border border-purple-700">
+                <img
+                  src={icon2}
+                  alt="icon"
+                  style={{ width: "46px", height: "46px" }}
+                />
+                <p className="text-sm text-gray-500">
+                  Tutors
+                  <br />
+                  <span className="font-bold text-black text-2xl">250+</span>
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-
       {/* End Hero */}
 
       {/* Start Services */}
-      <div className="w-full bg-white py-18 pb-12">
+      <div className="w-full bg-white py-18 pb-12 pt-32">
         <div className="container mx-auto px-6 lg:px-24">
           <h2
             className="text-center text-base font-semibold"
@@ -783,7 +829,6 @@ function Home() {
           </div>
         </div>
       </div>
-
       {/* End Blogs */}
     </>
   );
