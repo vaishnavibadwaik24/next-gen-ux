@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import logo from "./logo.png";
+import logo from "./logo.svg";
 import Hero from "./images/Hero.svg";
 import Speak from "./images/Speak.png";
 import Vector from "./images/Vector.png";
@@ -27,9 +27,9 @@ import Image3 from "./images/Image3.jpg";
 import Avatar3 from "./images/Avatar3.png";
 import Avatar4 from "./images/Avatar4.png";
 import Avatar5 from "./images/Avatar5.png";
-import BlogImage1 from "./images/BlogImage1.png";
-import BlogImage2 from "./images/BlogImage2.png";
-import BlogImage3 from "./images/BlogImage3.png";
+import BlogImage1 from "./images/BlogImage1.svg";
+import BlogImage2 from "./images/BlogImage2.svg";
+import BlogImage3 from "./images/BlogImage3.svg";
 
 function Home() {
   const [centerIndex, setCenterIndex] = useState(1);

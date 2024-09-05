@@ -1,5 +1,5 @@
 import React from "react";
-import logolight from "./logo-light.png";
+import logolight from "./logo-light.svg";
 
 
 export default function Footer() {

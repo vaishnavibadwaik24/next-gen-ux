@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import logo from "./logo.png";
+import logo from "./logo.svg";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -114,12 +114,8 @@ export default function Header() {
           </li>
           <li className="flex">
             <NavLink
-              to="/Courses"
-              className={({ isActive }) =>
-                isActive
-                  ? "flex items-center px-1 font-semibold -mb-1 text-purple-800"
-                  : "flex items-center px-1 font-semibold -mb-1 hover:text-purple-800"
-              }
+              to="#"
+              className="flex items-center px-1 font-semibold -mb-1 text-black hover:text-purple-800"
             >
               Courses
             </NavLink>
@@ -138,12 +134,8 @@ export default function Header() {
           </li>
           <li className="flex">
             <NavLink
-              to="/FAQ"
-              className={({ isActive }) =>
-                isActive
-                  ? "flex items-center font-semibold -mb-1 text-purple-800"
-                  : "flex items-center font-semibold -mb-1 hover:text-purple-800"
-              }
+              to="#"
+              className="flex items-center font-semibold -mb-1 text-black hover:text-purple-800"
             >
               FAQ's
             </NavLink>
@@ -217,6 +209,7 @@ export default function Header() {
               className={({ isActive }) =>
                 isActive ? "font-semibold text-purple-800" : "font-semibold"
               }
+              onClick={() => setIsMobileMenuOpen(false)}
             >
               Home
             </NavLink>
@@ -227,16 +220,16 @@ export default function Header() {
               className={({ isActive }) =>
                 isActive ? "font-semibold text-purple-800" : "font-semibold"
               }
+              onClick={() => setIsMobileMenuOpen(false)}
             >
               About us
             </NavLink>
           </li>
           <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
             <NavLink
-              to="/Courses"
-              className={({ isActive }) =>
-                isActive ? "font-semibold text-purple-800" : "font-semibold"
-              }
+              to="#"
+              className="font-semibold text-black"
+              onClick={() => setIsMobileMenuOpen(false)}
             >
               Courses
             </NavLink>
@@ -247,16 +240,16 @@ export default function Header() {
               className={({ isActive }) =>
                 isActive ? "font-semibold text-purple-800" : "font-semibold"
               }
+              onClick={() => setIsMobileMenuOpen(false)}
             >
               Contact us
             </NavLink>
           </li>
           <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
             <NavLink
-              to="/FAQ"
-              className={({ isActive }) =>
-                isActive ? "font-semibold text-purple-800" : "font-semibold"
-              }
+              to="#"
+              className="font-semibold text-black" 
+              onClick={() => setIsMobileMenuOpen(false)}
             >
               FAQ's
             </NavLink>

@@ -1,7 +1,7 @@
 import React from "react";
-import AUimage1 from "./images/AUimage1.png";
-import AUimage2 from "./images/AUimage2.png";
-import FeatureImg from "./images/FeatureImg.png";
+import AUimage1 from "./images/AUimage1.svg";
+import AUimage2 from "./images/AUimage2.svg";
+import FeatureImg from "./images/FeatureImg.svg";
 import Ellipse1 from "./images/Ellipse1.png";
 import Ellipse2 from "./images/Ellipse2.png";
 
