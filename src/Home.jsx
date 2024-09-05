@@ -3,13 +3,17 @@ import { Link } from "react-router-dom";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import logo from "./logo.png";
-import Hero from "./images/Hero.png";
+import Hero from "./images/Hero.svg";
 import Speak from "./images/Speak.png";
 import Vector from "./images/Vector.png";
 import idea from "./images/idea.svg";
+import Circle1 from "./images/Circle1.svg";
+import Circle2 from "./images/Circle2.svg";
+import Circle3 from "./images/Circle3.svg";
 import ProgressCircle from "./images/ProgressCircle.png";
 import icon1 from "./images/icon1.png";
 import icon2 from "./images/icon2.png";
+import Squares from "./images/Squares.svg";
 import { FaClock } from "react-icons/fa";
 import Slider from "react-slick";
 import Frame1 from "./images/Frame1.png";
@@ -289,7 +293,9 @@ function Home() {
       {/* Start Hero */}
       <div className="relative w-full h-screen flex items-center justify-center px-4 md:px-8 lg:px-16 bg-white">
         <div className="flex flex-col md:flex-row items-center justify-between w-full mx-auto pt-28">
-          <div className="flex-1 text-left md:pr-8 pt-24">
+          <div className="flex-1 text-left md:pr-8 pt-28">
+          <img src={Circle3} alt="Circle" className="absolute left-8 translate-y-4 hidden md:block" />
+
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-black pb-2">
               Upgrade Your{" "}
               <span style={{ color: "rgba(124, 65, 163, 1)" }}>Skills</span>{" "}
@@ -304,10 +310,10 @@ function Home() {
               Path
             </h1>
             <p className="mt-4 text-sm md:text-base lg:text-base text-gray-600 max-w-lg">
-              Learn UI-UX Design skills with NextGen UX. The latest online
+              Learn UI-UX Design skills with NextGen UX. The latest online <br />
               learning system and material that help you to be creative.
             </p>
-            <div className="mt-6 flex space-x-4">
+            <div className="mt-8 flex space-x-4">
               <Link
                 to="#"
                 className="px-5 py-3 font-semibold rounded-lg text-white"
@@ -323,7 +329,8 @@ function Home() {
                 Get free trial
               </Link>
             </div>
-            <div className="mt-8 flex space-x-6">
+            <img src={Circle2} alt="Circle" className="absolute translate-x-[22rem] translate-y-3/2" />
+            <div className="mt-10 flex space-x-6">
               <div className="flex items-center space-x-2">
                 <img src={Speak} alt="Public Speaking" className="w-6 h-6" />
                 <span className="text-gray-600">Public Speaking</span>
@@ -341,12 +348,14 @@ function Home() {
               className="mt-6 text-2xl font-bold"
               style={{ color: "#7C41A3" }}
             >
+              <img src={Circle1} alt="Circle" className="transform translate-x-48 translate-y-2" />
+              <img src={Circle3} alt="Circle" className="absolute right-96 translate-y-4 hidden md:block" />
               250+ <br />
               <span className="text-black font-normal">Collaboration</span>
             </div>
           </div>
 
-          <div className="flex-1 relative md:mt-0">
+          <div className="flex-1 relative md:mt-0 hidden md:block">
             <div className="relative">
               <img
                 src={Hero}
@@ -359,7 +368,7 @@ function Home() {
                   borderWidth: "60px",
                 }}
               />
-              <div className="absolute top-5 right-8 transform translate-x-8 -translate-y-8 bg-white p-4 rounded-lg shadow-xl border border-purple-700">
+              <div className="absolute top-5 right-8 transform translate-x-8 -translate-y-8 bg-neutral-50 p-4 rounded-lg shadow-2xl border border-purple-700">
                 <div className="px-3 pb-2">
                   <img
                     src={ProgressCircle}
@@ -368,14 +377,11 @@ function Home() {
                   />
                 </div>
                 <p className="text-sm text-gray-500 text-center">
-                  {" "}
-                  <span className="font-bold text-black text-2xl">
-                    5K+
-                  </span>{" "}
+                  <span className="font-bold text-black text-2xl">5K+</span>
                   <br /> Online Courses
                 </p>
               </div>
-              <div className="absolute top-1/3 left-1/8 transform -translate-x-16 -translate-y-1/2 bg-white px-4 space-x-5 py-3 rounded-lg shadow-xl flex border border-purple-700">
+              <div className="absolute top-1/3 left-1/8 transform -translate-x-16 -translate-y-1/2 bg-neutral-50 px-4 space-x-5 py-3 rounded-lg shadow-2xl flex border border-purple-700">
                 <img
                   src={icon1}
                   alt="icon"
@@ -387,7 +393,7 @@ function Home() {
                   Video Courses
                 </p>
               </div>
-              <div className="absolute bottom-16 right-8 transform translate-x-1 translate-y-14 bg-white px-4 space-x-2 py-3 rounded-lg shadow-xl flex border border-purple-700">
+              <div className="absolute bottom-16 right-8 transform translate-x-1 translate-y-14 bg-neutral-50 px-4 space-x-2 py-3 rounded-lg shadow-2xl flex border border-purple-700">
                 <img
                   src={icon2}
                   alt="icon"
@@ -400,6 +406,9 @@ function Home() {
                 </p>
               </div>
             </div>
+          </div>
+          <div className="absolute bottom-0 right-0 transform -translate-x-1/8 translate-y-40 hidden md:block">
+            <img src={Squares} alt="svg" style={{ width: "150px" }} />
           </div>
         </div>
       </div>
