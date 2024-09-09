@@ -3,18 +3,16 @@ import { NavLink } from "react-router-dom";
 import logo from "./logo.svg";
 
 export default function Header() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false); // State for the dropdown
 
   return (
-    <header className="p-4 bg-white text-black py-9 px-12 fixed w-full z-50">
-      <div className="container flex justify-between h-9 mx-auto px-12">
-        {/* Logo */}
+    <header className="bg-white text-black py-5 px-16 fixed w-full z-50">
+      <div className="container flex justify-between items-center h-16 mx-auto">
         <NavLink
           to="/"
-          rel="noopener noreferrer"
           aria-label="Back to homepage"
-          className="flex items-center p-2"
+          className="flex items-center"
         >
           <img
             src={logo}
@@ -24,8 +22,8 @@ export default function Header() {
         </NavLink>
 
         {/* Search and Explore Section */}
-        <div className="flex items-center border border-gray-300 rounded-lg">
-          <div className="flex items-center px-3">
+        <div className="hidden md:flex items-center border border-gray-300 rounded-lg max-w-full md:max-w-xs">
+          <div className="flex items-center px-3 py-2">
             <svg
               className="w-5 h-5 text-gray-400"
               fill="none"
@@ -43,7 +41,7 @@ export default function Header() {
             <input
               type="text"
               placeholder="Want to learn?"
-              className="outline-none border-none focus:ring-0 focus:outline-none ml-2 bg-white text-gray-500"
+              className="outline-none border-none focus:ring-0 focus:outline-none ml-2 bg-white text-gray-500 w-full"
             />
           </div>
 
@@ -86,71 +84,57 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Navigation Links */}
-        <ul className="items-stretch hidden space-x-3 lg:flex">
-          <li className="flex">
-            <NavLink
-              to="/"
-              className={({ isActive }) =>
-                isActive
-                  ? "nav-link flex items-center ml-2 font-semibold -mb-1 text-purple-800"
-                  : "nav-link flex items-center ml-2 font-semibold -mb-1 hover:text-purple-800"
-              }
-            >
-              Home
-            </NavLink>
-          </li>
-          <li className="flex">
-            <NavLink
-              to="/About"
-              className={({ isActive }) =>
-                isActive
-                  ? "nav-link flex items-center px-1 font-semibold -mb-1 text-purple-800"
-                  : "nav-link flex items-center px-1 font-semibold -mb-1 hover:text-purple-800"
-              }
-            >
-              About us
-            </NavLink>
-          </li>
-          <li className="flex">
-            <NavLink
-              to="#"
-              className="flex items-center px-1 font-semibold -mb-1 text-black hover:text-purple-800"
-            >
-              Courses
-            </NavLink>
-          </li>
-          <li className="flex">
-            <NavLink
-              to="/Contact"
-              className={({ isActive }) =>
-                isActive
-                  ? "flex items-center px-1 font-semibold -mb-1 text-purple-800"
-                  : "flex items-center px-1 font-semibold -mb-1 hover:text-purple-800"
-              }
-            >
-              Contact us
-            </NavLink>
-          </li>
-          <li className="flex">
-            <NavLink
-              to="#"
-              className="flex items-center font-semibold -mb-1 text-black hover:text-purple-800"
-            >
-              FAQ's
-            </NavLink>
-          </li>
-        </ul>
-
-        {/* Authentication Buttons */}
-        <div className="items-center flex-shrink-0 hidden lg:flex">
+        {/* Desktop Links */}
+        <nav className="hidden lg:flex space-x-6 items-center">
           <NavLink
-            to="/SignIn"
+            to="/"
             className={({ isActive }) =>
               isActive
-                ? "self-center px-4 py-3 font-semibold rounded text-purple-800"
-                : "self-center px-4 py-3 font-semibold rounded hover:text-purple-800"
+                ? "nav-link font-semibold text-purple-800"
+                : "nav-link font-semibold hover:text-purple-800"
             }
+          >
+            Home
+          </NavLink>
+          <NavLink
+            to="/About"
+            className={({ isActive }) =>
+              isActive
+                ? "nav-link font-semibold text-purple-800"
+                : "nav-link font-semibold hover:text-purple-800"
+            }
+          >
+            About us
+          </NavLink>
+          <NavLink
+            to="#"
+            className="font-semibold text-black hover:text-purple-800"
+          >
+            Courses
+          </NavLink>
+          <NavLink
+            to="/Contact"
+            className={({ isActive }) =>
+              isActive
+                ? "nav-link font-semibold text-purple-800"
+                : "nav-link font-semibold hover:text-purple-800"
+            }
+          >
+            Contact us
+          </NavLink>
+          <NavLink
+            to="#"
+            className="font-semibold text-black hover:text-purple-800"
+          >
+            FAQ's
+          </NavLink>
+        </nav>
+
+        {/* Sign In and Create Account Buttons */}
+        <div className="hidden lg:flex space-x-3">
+          <NavLink
+            to="/SignIn"
+            className="self-center px-4 py-2 font-semibold text-black hover:text-purple-800"
           >
             Sign in
           </NavLink>
@@ -158,8 +142,8 @@ export default function Header() {
             to="/CreateAccount"
             className={({ isActive }) =>
               isActive
-                ? "self-center px-5 py-2 font-semibold rounded-lg border-4 text-purple-800"
-                : "self-center px-5 py-2 font-semibold rounded-lg border-4 text-gray-50"
+                ? "self-center px-4 py-2 font-semibold rounded-lg border-4"
+                : "self-center px-4 py-2 font-semibold rounded-lg border-4 text-white"
             }
             style={({ isActive }) =>
               !isActive
@@ -176,117 +160,125 @@ export default function Header() {
 
         {/* Mobile Menu Button */}
         <button
-          className="p-4 lg:hidden"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          className="lg:hidden pl-0"
+          onClick={() => setIsSidebarOpen(!isSidebarOpen)}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
+            className="w-8 h-8"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
-            className="w-6 h-6 text-gray-800"
           >
             <path
               strokeLinecap="round"
               strokeLinejoin="round"
               strokeWidth="2"
               d="M4 6h16M4 12h16M4 18h16"
-            ></path>
+            />
           </svg>
         </button>
       </div>
 
-      {/* Mobile Navigation Links */}
+      {/* Sidebar for Mobile */}
       <div
-        className={`lg:hidden fixed top-20 right-0 h-full bg-white shadow-lg z-50 w-64 transform transition-transform duration-300 ${
-          isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
+        className={`lg:hidden fixed top-0 right-0 w-64 h-full bg-white shadow-lg z-50 transform transition-transform duration-300 ${
+          isSidebarOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <ul className="flex flex-col space-y-2 mt-4 p-4">
-          <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-            <NavLink
-              to="/"
-              className={({ isActive }) =>
-                isActive ? "font-semibold text-purple-800" : "font-semibold"
-              }
-              onClick={() => setIsMobileMenuOpen(false)}
+        <div className="flex justify-between p-4">
+          <button onClick={() => setIsSidebarOpen(false)}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-8 h-8"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
             >
-              Home
-            </NavLink>
-          </li>
-          <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-            <NavLink
-              to="/About"
-              className={({ isActive }) =>
-                isActive ? "font-semibold text-purple-800" : "font-semibold"
-              }
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              About us
-            </NavLink>
-          </li>
-          <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-            <NavLink
-              to="#"
-              className="font-semibold text-black"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Courses
-            </NavLink>
-          </li>
-          <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-            <NavLink
-              to="/Contact"
-              className={({ isActive }) =>
-                isActive ? "font-semibold text-purple-800" : "font-semibold"
-              }
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Contact us
-            </NavLink>
-          </li>
-          <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-            <NavLink
-              to="#"
-              className="font-semibold text-black" 
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              FAQ's
-            </NavLink>
-          </li>
-          <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-            <NavLink
-              to="/SignIn"
-              className={({ isActive }) =>
-                isActive
-                  ? "w-full font-semibold text-purple-800"
-                  : "w-full font-semibold text-black"
-              }
-            >
-              Sign in
-            </NavLink>
-          </li>
-          <li className="px-4 py-2 cursor-pointer">
-            <NavLink
-              to="/CreateAccount"
-              className={({ isActive }) =>
-                isActive
-                  ? "w-full px-4 py-2 font-semibold rounded-lg border-4 text-purple-800"
-                  : "w-full px-4 py-2 font-semibold rounded-lg border-4 text-gray-50"
-              }
-              style={({ isActive }) =>
-                !isActive
-                  ? {
-                      backgroundColor: "rgba(124, 65, 163, 1)",
-                      borderColor: "rgba(244, 235, 255, 1)",
-                    }
-                  : {}
-              }
-            >
-              Create free account
-            </NavLink>
-          </li>
-        </ul>
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <nav className="flex flex-col space-y-4 mt-8 px-4">
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              isActive
+                ? "nav-link font-semibold text-purple-800 px-4 py-2"
+                : "nav-link font-semibold hover:text-purple-800 px-4 py-2"
+            }
+            onClick={() => setIsSidebarOpen(false)}
+          >
+            Home
+          </NavLink>
+          <NavLink
+            to="/About"
+            className={({ isActive }) =>
+              isActive
+                ? "nav-link font-semibold text-purple-800 px-4 py-2"
+                : "nav-link font-semibold hover:text-purple-800 px-4 py-2"
+            }
+            onClick={() => setIsSidebarOpen(false)}
+          >
+            About us
+          </NavLink>
+          <NavLink
+            to="#"
+            className="font-semibold text-black hover:bg-gray-100 px-4 py-2"
+            onClick={() => setIsSidebarOpen(false)}
+          >
+            Courses
+          </NavLink>
+          <NavLink
+            to="/Contact"
+            className={({ isActive }) =>
+              isActive
+                ? "nav-link font-semibold text-purple-800 px-4 py-2"
+                : "nav-link font-semibold hover:text-purple-800 px-4 py-2"
+            }
+            onClick={() => setIsSidebarOpen(false)}
+          >
+            Contact us
+          </NavLink>
+          <NavLink
+            to="#"
+            className="font-semibold text-black hover:bg-gray-100 px-4 py-2"
+            onClick={() => setIsSidebarOpen(false)}
+          >
+            FAQ's
+          </NavLink>
+          <NavLink
+            to="/SignIn"
+            className="font-semibold text-black hover:bg-gray-100 px-4 py-2"
+            onClick={() => setIsSidebarOpen(false)}
+          >
+            Sign in
+          </NavLink>
+          <NavLink
+            to="/CreateAccount"
+            className={({ isActive }) =>
+              isActive
+                ? "self-center px-4 py-2 font-semibold rounded-lg border-4"
+                : "self-center px-4 py-2 font-semibold rounded-lg border-4 text-white"
+            }
+            style={({ isActive }) =>
+              !isActive
+                ? {
+                    backgroundColor: "rgba(124, 65, 163, 1)",
+                    borderColor: "rgba(244, 235, 255, 1)",
+                  }
+                : {}
+            }
+          >
+            Create free account
+          </NavLink>
+        </nav>
       </div>
     </header>
   );
