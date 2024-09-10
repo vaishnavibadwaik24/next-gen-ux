@@ -161,33 +161,29 @@ function Home() {
   const settings1 = {
     dots: true,
     infinite: true,
-    speed: 3000,
+    speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
     responsive: [
       {
         breakpoint: 1024,
-        settings1: {
-          slidesToShow: 3,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 768,
-        settings1: {
+        settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
-        },
+          infinite: true,
+          dots: true
+        }
       },
       {
-        breakpoint: 640,
-        settings1: {
+        breakpoint: 600,
+        settings: {
           slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
+          slidesToScroll: 1
+        }
+      }
+    ]
   };
+  
 
   const TutorCard = ({ name, title, description, imageUrl }) => (
     <div className="bg-gray-50 p-6 text-center">
@@ -680,20 +676,21 @@ function Home() {
 
       {/* Start Programs */}
       <div className="w-full bg-white py-8">
-        <div className="container mx-auto px-6 lg:px-24">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-24">
           <h2
             className="text-base font-semibold mb-2"
             style={{ color: "rgba(136, 73, 178, 0.94)" }}
           >
             Explore Programs
           </h2>
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Our Most Popular Class
           </h1>
-          <p className="text-gray-500 text-xl mb-8">
+          <p className="text-gray-500 text-sm sm:text-lg md:text-xl mb-8">
             Step into our acclaimed class, where cutting-edge insights and
             expertise await to enhance your skills.
           </p>
+
           <Slider {...settings1}>
             {courses.map((course, index) => (
               <div key={index}>
@@ -701,11 +698,9 @@ function Home() {
               </div>
             ))}
           </Slider>
-          <div className="text-center mt-14">
-            <button
-              href="#"
-              className="bg-gray-100 text-black text-sm py-2 px-4 border-2 rounded-lg font-bold transition hover:bg-[rgba(124,65,163,1)] hover:text-white"
-            >
+
+          <div className="text-center mt-10 sm:mt-14">
+            <button className="bg-gray-100 text-black text-xs sm:text-sm py-2 px-4 border-2 rounded-lg font-bold transition hover:bg-[rgba(124,65,163,1)] hover:text-white">
               Explore All Programs
             </button>
           </div>
@@ -773,31 +768,29 @@ function Home() {
 
       {/* Start Blogs */}
       <div className="w-full bg-white pt-10 pb-4">
-        <div className="container mx-auto px-24">
-          <h2 className="text-3xl text-black font-bold mb-8">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-24">
+          <h2 className="text-xl sm:text-2xl md:text-3xl text-black font-bold mb-8">
             Our Recent Blogs
           </h2>
-          <div className="flex flex-wrap">
+
+          <div className="flex flex-wrap lg:flex-nowrap">
             {/* Left Side Card */}
-            <div className="w-full lg:w-2/4 pr-4">
-              <div className="overflow-hidden mb-8">
+            <div className="w-full lg:w-1/2 lg:pr-4 mb-6 lg:mb-0">
+              <div className="overflow-hidden">
                 <img
                   src={blogs[0].image}
                   alt={blogs[0].title}
-                  className="object-cover w-full"
+                  className="object-cover w-full h-auto"
                   style={{ height: "220px" }}
                 />
-                <div className="p-6">
-                  <p
-                    className="text-purple-600 text-xs font-semibold mb-2"
-                    style={{ color: "rgba(136, 73, 178, 0.94)" }}
-                  >
+                <div className="p-4 sm:p-6">
+                  <p className="text-purple-800 text-xs font-semibold mb-2">
                     {blogs[0].date}
                   </p>
-                  <h3 className="text-xl text-black font-semibold mb-1">
+                  <h3 className="text-lg sm:text-xl text-black font-semibold mb-1">
                     {blogs[0].title}
                   </h3>
-                  <p className="text-gray-600 text-base mb-4">
+                  <p className="text-gray-600 text-sm sm:text-base mb-4">
                     {blogs[0].description}
                   </p>
                   <div className="flex space-x-2">
@@ -815,27 +808,29 @@ function Home() {
             </div>
 
             {/* Right Side Cards */}
-            <div className="w-full lg:w-2/4 space-y-6">
+            <div className="w-full lg:w-1/2 space-y-6">
               {blogs.slice(1).map((blog, index) => (
-                <div key={index} className="flex overflow-hidden mb-6">
+                <div
+                  key={index}
+                  className="flex flex-col sm:flex-row overflow-hidden mb-6"
+                >
                   <img
                     src={blog.image}
                     alt={blog.title}
-                    className="object-cover w-1/2"
+                    className="object-cover w-full sm:w-1/2 h-auto"
                     style={{ height: "180px" }}
                   />
-                  <div className="pl-4 flex flex-col justify-between w-1/2">
+                  <div className="pl-0 sm:pl-4 flex flex-col justify-between w-full sm:w-1/2">
                     <div>
-                      <p
-                        className="text-purple-600 text-xs font-semibold mb-2"
-                        style={{ color: "rgba(136, 73, 178, 0.94)" }}
-                      >
+                      <p className="text-purple-800 text-xs font-semibold mb-2">
                         {blog.date}
                       </p>
-                      <h3 className="text-black text-base font-semibold mb-1">
+                      <h3 className="text-black text-sm sm:text-base font-semibold mb-1">
                         {blog.title}
                       </h3>
-                      <p className="text-gray-600 mb-4">{blog.description}</p>
+                      <p className="text-gray-600 text-sm mb-4">
+                        {blog.description}
+                      </p>
                     </div>
                     <div className="flex space-x-2 mb-2">
                       {blog.categories.map((category, index) => (
